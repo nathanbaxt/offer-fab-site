@@ -4,6 +4,9 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # The Tina client ID is public by design (baked into the editor); token is read-only.
+  # Tell Netlify's secrets scanner not to flag them, or the build fails.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_TINA_CLIENT_ID,TINA_TOKEN"
 
 # Prompts for these two values during the Netlify "deploy" import flow
 [template.environment]
