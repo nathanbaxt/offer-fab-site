@@ -1,0 +1,134 @@
+{
+  "business": {
+    "phone": "0476 558 458",
+    "phoneHref": "0476558458",
+    "email": "offerfabrications@gmail.com",
+    "address": "Unit 14/16 Salpietro Street, Bibra Lake WA 6163",
+    "hours": "Mon–Fri · 7:00am – 4:00pm",
+    "instagram": "@offer_fabrications",
+    "instagramUrl": "https://instagram.com/offer_fabrications"
+  },
+  "hero": {
+    "kicker": "Bibra Lake · Perth · Western Australia",
+    "titleLine1": "CUSTOM METAL",
+    "titleLine2": "FABRICATION,",
+    "titleLine3": "BUILT PROPERLY.",
+    "sub": "Custom steel, stainless and aluminium fabrication for mining, industrial, commercial and marine clients. Workshop-built in Bibra Lake, installed right across WA.",
+    "ctaPrimary": "Request a Quote",
+    "ctaSecondary": "See Our Work",
+    "image": "/assets/img/hero-ute-generator.jpg"
+  },
+  "materials": [
+    { "name": "Steel", "sub": "Mild & structural" },
+    { "name": "Stainless", "sub": "Food & marine grade" },
+    { "name": "Aluminium", "sub": "Light & corrosion-proof" },
+    { "name": "MIG / TIG", "sub": "Certified welding" }
+  ],
+  "intro": {
+    "kicker": "Who we are",
+    "heading": "A Perth fabrication shop that builds it right the first time.",
+    "body": "Offer Fabrications delivers high-quality custom steel, aluminium and stainless-steel solutions for commercial, industrial and trade clients. We work directly with you — from a sketch on the back of a docket to full engineered drawings — no middleman, no outsourcing."
+  },
+  "capabilities": {
+    "kicker": "What we build",
+    "heading": "Fabrication capabilities",
+    "sub": "From a one-off custom part to a full production run — designed, cut, welded and finished in-house.",
+    "items": [
+      { "title": "Custom Steel Fabrication", "body": "Mild and structural steel cut, formed and welded to spec — frames, brackets, bins, platforms and bespoke one-offs." },
+      { "title": "Stainless Steel", "body": "Food, marine and architectural-grade stainless — benches, cabinets, filleting stations and corrosion-resistant builds." },
+      { "title": "Aluminium Fabrication", "body": "Lightweight, corrosion-proof aluminium work — boat components, frames, panels and marine fit-outs." },
+      { "title": "Enclosures & Switchboards", "body": "Ventilated equipment cabinets, switchboard enclosures and weatherproof housings for industrial and mine-site gear." },
+      { "title": "Bins, Racks & Handling", "body": "Tipping bins, forklift bins, equipment racks and materials-handling gear built tough for the yard and the site." },
+      { "title": "Balustrades & Gates", "body": "Balustrading systems, handrails, emergency gates and access solutions for commercial and residential sites." },
+      { "title": "Marine & Boat Components", "body": "Custom boat fittings, brackets and alloy components fabricated for the harsh WA marine environment." },
+      { "title": "MIG & TIG Welding", "body": "Clean, strong welds across steel, stainless and aluminium — production runs or precision repairs." },
+      { "title": "On-Site Repairs & Install", "body": "Mobile fabrication, breakdown repairs and installation — we bring the workshop to your site across WA." }
+    ]
+  },
+  "feature1": {
+    "kicker": "Three materials, one shop",
+    "heading": "Steel, stainless and aluminium — all handled in-house.",
+    "body": "No outsourcing, no runaround. We take the job from design through to a finished, ready-to-install build under one roof — so quality stays consistent and timelines stay tight.",
+    "image": "/assets/img/stainless-cabinet.jpg",
+    "points": [
+      { "strong": "One-off to production.", "rest": "Custom single builds or repeat batch runs, same quality every time." },
+      { "strong": "Workshop & on-site.", "rest": "Fabricated in Bibra Lake, installed or repaired across WA — including mine sites." },
+      { "strong": "WA-owned & local.", "rest": "Talk straight to the people actually building your job." }
+    ]
+  },
+  "work": {
+    "kicker": "Straight off the floor",
+    "heading": "Recent work",
+    "sub": "Real fabrication from the Bibra Lake workshop and out on site — no stock photos, just the gear we build.",
+    "items": [
+      { "image": "/assets/img/mining-gas-enclosure.jpg", "tag": "Mining / Gas", "caption": "On-site valve enclosure", "size": "large" },
+      { "image": "/assets/img/blue-bin-branded.jpg", "tag": "", "caption": "Forklift tipping bins", "size": "small" },
+      { "image": "/assets/img/stainless-cabinet.jpg", "tag": "", "caption": "Stainless cabinet", "size": "small" },
+      { "image": "/assets/img/ventilated-enclosures.jpg", "tag": "", "caption": "Ventilated housings", "size": "small" },
+      { "image": "/assets/img/yellow-tipping-bins.jpg", "tag": "", "caption": "Mobile tipping bins", "size": "small" },
+      { "image": "/assets/img/steel-tanks.jpg", "tag": "Steel", "caption": "Fabricated steel tanks", "size": "wide" },
+      { "image": "/assets/img/blue-tipping-bins.jpg", "tag": "", "caption": "Powder-coated fleet", "size": "small" },
+      { "image": "/assets/img/yellow-tipping-bin-press.jpg", "tag": "", "caption": "On the floor", "size": "small" },
+      { "image": "/assets/img/blue-bin-shopfront.jpg", "tag": "", "caption": "Ready for dispatch", "size": "small" },
+      { "image": "/assets/img/workshop-exterior.jpg", "tag": "Bibra Lake", "caption": "The workshop", "size": "wide" }
+    ]
+  },
+  "projects": {
+    "kicker": "Trusted on major sites",
+    "heading": "Our fabrication ends up where it matters.",
+    "sub": "Work fabricated in our Bibra Lake shop has gone on to serve some of Western Australia's biggest resource and industrial operations.",
+    "companies": ["Rio Tinto", "BHP", "Alcoa"],
+    "note": "Fabrication supplied for projects and contractors working on these sites."
+  },
+  "feature2": {
+    "kicker": "Workshop to site",
+    "headingLine1": "Built in the shed.",
+    "headingLine2": "Finished on your site.",
+    "body": "We don't stop at the roller door. From tipping bins for the yard to valve enclosures bolted down on a live gas site, we deliver, install and repair right across Western Australia — including remote mine sites.",
+    "cta": "Start your build",
+    "image": "/assets/img/mining-gas-enclosure.jpg"
+  },
+  "stats": [
+    { "value": "3", "label": "Materials worked in-house" },
+    { "value": "1:1", "label": "Deal direct, no middleman" },
+    { "value": "WA", "label": "Wide install & on-site repair" },
+    { "value": "100%", "label": "Custom-built to spec" }
+  ],
+  "industries": {
+    "kicker": "Who we build for",
+    "heading": "Industries we serve",
+    "items": [
+      { "name": "Mining & Resources" },
+      { "name": "Oil & Gas" },
+      { "name": "Construction" },
+      { "name": "Marine" },
+      { "name": "Commercial & Trade" },
+      { "name": "Civil & Infrastructure" }
+    ]
+  },
+  "process": {
+    "kicker": "How it works",
+    "heading": "From enquiry to install",
+    "steps": [
+      { "title": "Enquire", "body": "Send through your idea, drawing or photo. We'll talk materials and what's possible." },
+      { "title": "Design & Quote", "body": "We scope the job, recommend the right build and give you a clear, fixed quote." },
+      { "title": "Fabricate", "body": "Cut, formed, welded and finished in our Bibra Lake workshop to spec." },
+      { "title": "Deliver & Install", "body": "Pick-up, delivery or full on-site installation anywhere across WA." }
+    ]
+  },
+  "contact": {
+    "kicker": "Get a quote",
+    "heading": "Start your build",
+    "sub": "Tell us what you need fabricated. Send a sketch, drawing or photo and we'll come back with a quote — usually within a day or two.",
+    "formEndpoint": "https://formspree.io/f/REPLACE_WITH_ENDPOINT"
+  },
+  "ctaBanner": {
+    "heading": "Got a job that needs building properly?",
+    "image": "/assets/img/yellow-tipping-bin-press.jpg",
+    "ctaPrimary": "Request a Quote",
+    "ctaSecondary": "Call Now"
+  },
+  "footer": {
+    "blurb": "Custom steel, stainless and aluminium fabrication. Workshop-built in Bibra Lake, installed across Western Australia."
+  }
+}
