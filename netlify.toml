@@ -4,3 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# Prompts for these two values during the Netlify "deploy" import flow
+[template.environment]
+  NEXT_PUBLIC_TINA_CLIENT_ID = "Your Tina Cloud Client ID"
+  TINA_TOKEN = "Your Tina Cloud read-only token"
