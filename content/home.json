@@ -10,10 +10,10 @@
   },
   "hero": {
     "kicker": "Bibra Lake · Perth · Western Australia",
-    "titleLine1": "CUSTOM METAL",
+    "titleLine1": "CUSTOM STEEL",
     "titleLine2": "FABRICATION,",
-    "titleLine3": "BUILT PROPERLY.",
-    "sub": "Custom steel, stainless and aluminium fabrication for mining, industrial, commercial and marine clients. Workshop-built in Bibra Lake, installed right across WA.",
+    "titleLine3": "BUILT TO LAST.",
+    "sub": "Custom steel, stainless steel and aluminium fabrication for mining, industrial and commercial projects. Designed and built in Bibra Lake, servicing clients across Western Australia.",
     "ctaPrimary": "Request a Quote",
     "ctaSecondary": "See Our Work",
     "image": "/assets/img/hero-ute-generator.jpg"
@@ -26,40 +26,37 @@
   ],
   "intro": {
     "kicker": "Who we are",
-    "heading": "A Perth fabrication shop that builds it right the first time.",
-    "body": "Offer Fabrications delivers high-quality custom steel, aluminium and stainless-steel solutions for commercial, industrial and trade clients. We work directly with you — from a sketch on the back of a docket to full engineered drawings — no middleman, no outsourcing."
+    "heading": "A fabrication partner that delivers quality, every time.",
+    "body": "Based in Bibra Lake, Offer Fabrications delivers high-quality fabrication services across steel, stainless steel and aluminium for businesses that demand dependable workmanship and fast turnaround times. Whether it's a one-off component or a complete fabricated assembly, we build it properly the first time."
   },
   "capabilities": {
     "kicker": "What we build",
     "heading": "Fabrication capabilities",
     "sub": "From a one-off custom part to a full production run — designed, cut, welded and finished in-house.",
     "items": [
-      { "title": "Custom Steel Fabrication", "body": "Mild and structural steel cut, formed and welded to spec — frames, brackets, bins, platforms and bespoke one-offs." },
-      { "title": "Stainless Steel", "body": "Food, marine and architectural-grade stainless — benches, cabinets, filleting stations and corrosion-resistant builds." },
-      { "title": "Aluminium Fabrication", "body": "Lightweight, corrosion-proof aluminium work — boat components, frames, panels and marine fit-outs." },
-      { "title": "Enclosures & Switchboards", "body": "Ventilated equipment cabinets, switchboard enclosures and weatherproof housings for industrial and mine-site gear." },
-      { "title": "Bins, Racks & Handling", "body": "Tipping bins, forklift bins, equipment racks and materials-handling gear built tough for the yard and the site." },
-      { "title": "Balustrades & Gates", "body": "Balustrading systems, handrails, emergency gates and access solutions for commercial and residential sites." },
-      { "title": "Marine & Boat Components", "body": "Custom boat fittings, brackets and alloy components fabricated for the harsh WA marine environment." },
-      { "title": "MIG & TIG Welding", "body": "Clean, strong welds across steel, stainless and aluminium — production runs or precision repairs." },
-      { "title": "On-Site Repairs & Install", "body": "Mobile fabrication, breakdown repairs and installation — we bring the workshop to your site across WA." }
+      { "title": "Custom Steel Fabrication", "body": "Mild and structural steel fabrication from light to heavy. Frames, brackets, platforms, chutes, guards and bespoke one-off components." },
+      { "title": "Stainless Steel Fabrication", "body": "Food-grade, marine and architectural stainless steel fabrication including benches, cabinets, tanks, hoppers, pipework and corrosion-resistant assemblies." },
+      { "title": "Aluminium Fabrication", "body": "Lightweight, corrosion-resistant aluminium fabrication for canopies, marine components, enclosures, panels, frames and specialised industrial applications." },
+      { "title": "CNC Cutting & Folding", "body": "Precision sheet metal processing including laser cutting, folding and forming services to produce accurate, repeatable components ready for fabrication or assembly." },
+      { "title": "MIG & TIG Welding", "body": "High-quality MIG and TIG welding across steel, stainless steel and aluminium. Built for strength, durability and clean finishes across both one-off and production work." },
+      { "title": "Production Manufacturing", "body": "Low to medium volume production runs with consistent quality, efficient workflows and repeatable fabrication processes." }
     ]
   },
   "feature1": {
     "kicker": "Three materials, one shop",
-    "heading": "Steel, stainless and aluminium — all handled in-house.",
-    "body": "No outsourcing, no runaround. We take the job from design through to a finished, ready-to-install build under one roof — so quality stays consistent and timelines stay tight.",
+    "heading": "Steel, stainless steel and aluminium all handled in-house.",
+    "body": "Offer Fabrications delivers complete fabrication solutions from concept and design through to finished products. By keeping fabrication in-house, we maintain quality, improve turnaround times and provide a seamless experience for our clients across mining, industrial, oil and gas and commercial.",
     "image": "/assets/img/stainless-cabinet.jpg",
     "points": [
-      { "strong": "One-off to production.", "rest": "Custom single builds or repeat batch runs, same quality every time." },
-      { "strong": "Workshop & on-site.", "rest": "Fabricated in Bibra Lake, installed or repaired across WA — including mine sites." },
-      { "strong": "WA-owned & local.", "rest": "Talk straight to the people actually building your job." }
+      { "strong": "Custom projects to production runs.", "rest": "From one-off prototypes and bespoke fabrications to repeat manufacturing, every project is built with the same commitment to quality and precision." },
+      { "strong": "Built in Bibra Lake, servicing WA.", "rest": "Designed, fabricated and assembled in our Perth workshop, supporting projects throughout Western Australia." },
+      { "strong": "Direct communication, reliable delivery.", "rest": "Work directly with the team building your project, ensuring clear communication, accountability and consistent results from start to finish." }
     ]
   },
   "work": {
     "kicker": "Straight off the floor",
     "heading": "Recent work",
-    "sub": "Real fabrication from the Bibra Lake workshop and out on site — no stock photos, just the gear we build.",
+    "sub": "Real fabrication from the Bibra Lake workshop — no stock photos, just the gear we build.",
     "items": [
       { "image": "/assets/img/mining-gas-enclosure.jpg", "tag": "Mining / Gas", "caption": "On-site valve enclosure", "size": "large" },
       { "image": "/assets/img/blue-bin-branded.jpg", "tag": "", "caption": "Forklift tipping bins", "size": "small" },
@@ -84,15 +81,15 @@
     "kicker": "Workshop to site",
     "headingLine1": "Built in the shed.",
     "headingLine2": "Finished on your site.",
-    "body": "We don't stop at the roller door. From tipping bins for the yard to valve enclosures bolted down on a live gas site, we deliver, install and repair right across Western Australia — including remote mine sites.",
+    "body": "We don't stop at the roller door.",
     "cta": "Start your build",
     "image": "/assets/img/mining-gas-enclosure.jpg"
   },
   "stats": [
-    { "value": "3", "label": "Materials worked in-house" },
-    { "value": "1:1", "label": "Deal direct, no middleman" },
-    { "value": "WA", "label": "Wide install & on-site repair" },
-    { "value": "100%", "label": "Custom-built to spec" }
+    { "value": "Custom", "label": "Every project built to suit" },
+    { "value": "Direct", "label": "Deal direct, no middleman" },
+    { "value": "WA", "label": "Perth owned & operated" },
+    { "value": "100%", "label": "Custom built to specification" }
   ],
   "industries": {
     "kicker": "Who we build for",
@@ -108,12 +105,12 @@
   },
   "process": {
     "kicker": "How it works",
-    "heading": "From enquiry to install",
+    "heading": "From enquiry to delivery",
     "steps": [
       { "title": "Enquire", "body": "Send through your idea, drawing or photo. We'll talk materials and what's possible." },
       { "title": "Design & Quote", "body": "We scope the job, recommend the right build and give you a clear, fixed quote." },
       { "title": "Fabricate", "body": "Cut, formed, welded and finished in our Bibra Lake workshop to spec." },
-      { "title": "Deliver & Install", "body": "Pick-up, delivery or full on-site installation anywhere across WA." }
+      { "title": "Deliver", "body": "Completed projects are prepared for collection or organised for transport across Western Australia." }
     ]
   },
   "contact": {
@@ -124,11 +121,11 @@
   },
   "ctaBanner": {
     "heading": "Got a job that needs building properly?",
-    "image": "/assets/img/yellow-tipping-bin-press.jpg",
+    "image": "/assets/img/cta-welding.jpg",
     "ctaPrimary": "Request a Quote",
     "ctaSecondary": "Call Now"
   },
   "footer": {
-    "blurb": "Custom steel, stainless and aluminium fabrication. Workshop-built in Bibra Lake, installed across Western Australia."
+    "blurb": "Custom steel, stainless and aluminium fabrication. Workshop-built in Bibra Lake, delivered across Western Australia."
   }
 }

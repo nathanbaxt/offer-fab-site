@@ -6,12 +6,9 @@ const capIcons = [
   '<path d="M4 5h16M4 19h16M12 5v14"/><path d="M8 5v2M16 5v2M8 17v2M16 17v2"/>',
   '<path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/><path d="M18.5 15.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>',
   '<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>',
-  '<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M9 11.5h.6M14.4 11.5h.6"/>',
-  '<path d="M5 8h14l-2 8H7L5 8z"/><path d="M3 8h18"/><circle cx="9" cy="19" r="1.3"/><circle cx="15" cy="19" r="1.3"/>',
-  '<path d="M3 7h18M3 18h18M6 7v11M10 7v11M14 7v11M18 7v11"/>',
-  '<path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/>',
+  '<rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 10h18M9 4v16"/>',
   '<circle cx="12" cy="12" r="2.3"/><path d="M12 3v3.5M12 17.5V21M3 12h3.5M17.5 12H21M5.6 5.6l2.5 2.5M15.9 15.9l2.5 2.5M18.4 5.6l-2.5 2.5M8.1 15.9l-2.5 2.5"/>',
-  '<path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/>',
+  '<path d="M3 7h18M3 18h18M6 7v11M10 7v11M14 7v11M18 7v11"/>',
 ];
 const indIcons = [
   '<path d="M3 19h18L14.5 8l-3.5 5.5L9 11l-6 8z"/><circle cx="17.5" cy="6" r="1.6"/>',
@@ -89,6 +86,11 @@ const mailTo = "mailto:" + home.business.email;
   .ico-sm { width:1.35rem; height:1.35rem; stroke: currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
   .reveal { opacity:0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
   .reveal.in { opacity:1; transform:none; }
+  /* company marquee */
+  .marquee { overflow:hidden; white-space:nowrap; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .marquee-track { display:inline-block; animation: mscroll 34s linear infinite; }
+  @keyframes mscroll { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+  .diamond { color: var(--accent); margin: 0 1.9rem; font-size:.55em; vertical-align:middle; }
   ::selection { background: var(--accent); color:#fff; }
   a { text-decoration:none; }
   section[id] { scroll-margin-top: 76px; }
@@ -179,11 +181,14 @@ const mailTo = "mailto:" + home.business.email;
       </div>
     </div>
   </div>
-  <div class="bg-ink text-white">
-    <div class="max-w-[1280px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10 border-x border-white/10">
-      {home.materials.map((m) => (
-        <div class="py-6 px-5"><div class="font-display font-bold text-lg">{m.name}</div><div class="text-[12.5px] text-white/50 mt-0.5">{m.sub}</div></div>
-      ))}
+  <div class="bg-ink text-white py-6 overflow-hidden">
+    <p class="text-center text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">Fabrication trusted on major WA sites</p>
+    <div class="marquee">
+      <div class="marquee-track font-display font-semibold text-lg sm:text-xl uppercase tracking-wide text-white/75">
+        {[...Array(3).fill(home.projects.companies).flat(), ...Array(3).fill(home.projects.companies).flat()].map((c) => (
+          <span>{c}<span class="diamond">◆</span></span>
+        ))}
+      </div>
     </div>
   </div>
 </section>
@@ -263,38 +268,6 @@ const mailTo = "mailto:" + home.business.email;
           </figcaption>
         </figure>
       ))}
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS / TRUSTED ON MAJOR SITES -->
-<section id="projects" class="max-w-[1280px] mx-auto px-6 py-20 lg:py-28">
-  <div class="reveal max-w-2xl mb-12">
-    <div class="kicker mb-4">{home.projects.kicker}</div>
-    <h2 class="h-sec font-display mb-5">{home.projects.heading}</h2>
-    <p class="lead">{home.projects.sub}</p>
-  </div>
-  <div class="reveal grid grid-cols-1 sm:grid-cols-3 gap-px bg-[var(--line)] border line rounded-[3px] overflow-hidden">
-    {home.projects.companies.map((name) => (
-      <div class="bg-white py-10 px-6 flex items-center justify-center">
-        <span class="font-display font-bold text-2xl lg:text-3xl tracking-tight text-center" style="color:var(--ink-2)">{name}</span>
-      </div>
-    ))}
-  </div>
-  <p class="reveal muted text-[.85rem] mt-5">{home.projects.note}</p>
-</section>
-
-<!-- FEATURE 2 -->
-<section class="bg-ink text-white">
-  <div class="max-w-[1280px] mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-    <div class="reveal order-2 lg:order-1">
-      <div class="kicker on-dark mb-5">{home.feature2.kicker}</div>
-      <h2 class="h-feat font-display mb-6">{home.feature2.headingLine1}<br/>{home.feature2.headingLine2}</h2>
-      <p class="lead !text-white/70 mb-8">{home.feature2.body}</p>
-      <a href="#contact" class="btn btn-light">{home.feature2.cta}</a>
-    </div>
-    <div class="reveal order-1 lg:order-2 zoom rounded-[3px]">
-      <img src={home.feature2.image} alt="Offer Fabrications enclosure installed on a WA site" class="w-full aspect-[4/3] object-cover rounded-[3px]" />
     </div>
   </div>
 </section>
@@ -387,14 +360,9 @@ const mailTo = "mailto:" + home.business.email;
             <label class="block text-[11px] muted uppercase tracking-widest mb-2">What do you need built?</label>
             <select name="service" class="w-full bg-white border line rounded-[3px] px-4 py-3 text-[.95rem] focus:outline-none focus:border-[var(--accent)]">
               <option>Custom steel fabrication</option>
-              <option>Stainless steel</option>
               <option>Aluminium fabrication</option>
-              <option>Enclosures / switchboards</option>
-              <option>Bins / racks / handling</option>
-              <option>Balustrades / gates</option>
-              <option>Marine / boat components</option>
+              <option>Stainless steel fabrication</option>
               <option>Welding / repair</option>
-              <option>On-site work</option>
               <option>Something else</option>
             </select>
           </div>
