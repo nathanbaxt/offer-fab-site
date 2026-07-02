@@ -1,0 +1,130 @@
+fragment HomeParts on Home {
+  __typename
+  business {
+    __typename
+    phone
+    phoneHref
+    email
+    address
+    hours
+    instagram
+    instagramUrl
+  }
+  hero {
+    __typename
+    kicker
+    titleLine1
+    titleLine2
+    titleLine3
+    sub
+    ctaPrimary
+    ctaSecondary
+    image
+  }
+  materials {
+    __typename
+    name
+    sub
+  }
+  intro {
+    __typename
+    kicker
+    heading
+    body
+  }
+  capabilities {
+    __typename
+    kicker
+    heading
+    sub
+    items {
+      __typename
+      title
+      body
+    }
+  }
+  feature1 {
+    __typename
+    kicker
+    heading
+    body
+    image
+    points {
+      __typename
+      strong
+      rest
+    }
+  }
+  work {
+    __typename
+    kicker
+    heading
+    sub
+    items {
+      __typename
+      image
+      tag
+      caption
+      size
+    }
+  }
+  projects {
+    __typename
+    kicker
+    heading
+    sub
+    companies
+    note
+  }
+  feature2 {
+    __typename
+    kicker
+    headingLine1
+    headingLine2
+    body
+    cta
+    image
+  }
+  stats {
+    __typename
+    value
+    label
+  }
+  industries {
+    __typename
+    kicker
+    heading
+    items {
+      __typename
+      name
+    }
+  }
+  process {
+    __typename
+    kicker
+    heading
+    steps {
+      __typename
+      title
+      body
+    }
+  }
+  contact {
+    __typename
+    kicker
+    heading
+    sub
+    formEndpoint
+  }
+  ctaBanner {
+    __typename
+    heading
+    image
+    ctaPrimary
+    ctaSecondary
+  }
+  footer {
+    __typename
+    blurb
+  }
+}
