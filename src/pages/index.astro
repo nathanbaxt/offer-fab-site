@@ -258,13 +258,13 @@ const mailTo = "mailto:" + home.business.email;
       </div>
       <p class="lead md:max-w-sm md:text-right">{home.work.sub}</p>
     </div>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
       {home.work.items.map((w) => (
-        <figure class={"zoom relative rounded-[3px] overflow-hidden reveal " + (w.size === 'large' ? 'col-span-2 row-span-2' : w.size === 'wide' ? 'col-span-2' : '')}>
-          <img src={w.image} alt={w.caption} class={w.size === 'large' ? 'w-full h-full min-h-[240px] object-cover' : w.size === 'wide' ? 'w-full aspect-[2/1] object-cover' : 'w-full aspect-square object-cover'} />
-          <figcaption class={"absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent text-white " + (w.size === 'small' ? 'p-4' : 'p-5')}>
+        <figure class="zoom relative rounded-[3px] overflow-hidden reveal">
+          <img src={w.image} alt={w.caption} class="w-full aspect-[4/3] object-cover" />
+          <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/75 to-transparent text-white">
             {w.tag && <span class="text-[11px] tracking-widest uppercase text-white/70 font-medium">{w.tag}</span>}
-            <div class={"font-display font-semibold " + (w.size === 'small' ? 'text-sm' : '')}>{w.caption}</div>
+            <div class="font-display font-semibold text-lg">{w.caption}</div>
           </figcaption>
         </figure>
       ))}

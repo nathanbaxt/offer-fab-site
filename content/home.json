@@ -58,16 +58,10 @@
     "heading": "Recent work",
     "sub": "Real fabrication from the Bibra Lake workshop — no stock photos, just the gear we build.",
     "items": [
-      { "image": "/assets/img/mining-gas-enclosure.jpg", "tag": "Mining / Gas", "caption": "On-site valve enclosure", "size": "large" },
-      { "image": "/assets/img/blue-bin-branded.jpg", "tag": "", "caption": "Forklift tipping bins", "size": "small" },
-      { "image": "/assets/img/stainless-cabinet.jpg", "tag": "", "caption": "Stainless cabinet", "size": "small" },
-      { "image": "/assets/img/ventilated-enclosures.jpg", "tag": "", "caption": "Ventilated housings", "size": "small" },
-      { "image": "/assets/img/yellow-tipping-bins.jpg", "tag": "", "caption": "Mobile tipping bins", "size": "small" },
-      { "image": "/assets/img/steel-tanks.jpg", "tag": "Steel", "caption": "Fabricated steel tanks", "size": "wide" },
-      { "image": "/assets/img/blue-tipping-bins.jpg", "tag": "", "caption": "Powder-coated fleet", "size": "small" },
-      { "image": "/assets/img/yellow-tipping-bin-press.jpg", "tag": "", "caption": "On the floor", "size": "small" },
-      { "image": "/assets/img/blue-bin-shopfront.jpg", "tag": "", "caption": "Ready for dispatch", "size": "small" },
-      { "image": "/assets/img/workshop-exterior.jpg", "tag": "Bibra Lake", "caption": "The workshop", "size": "wide" }
+      { "image": "/assets/img/mining-gas-enclosure.jpg", "tag": "Mining / Gas", "caption": "On-site valve enclosure" },
+      { "image": "/assets/img/steel-tanks.jpg", "tag": "Steel", "caption": "Fabricated steel tanks" },
+      { "image": "/assets/img/ventilated-enclosures.jpg", "tag": "Enclosures", "caption": "Ventilated equipment housings" },
+      { "image": "/assets/img/blue-bin-branded.jpg", "tag": "Materials Handling", "caption": "Forklift tipping bins" }
     ]
   },
   "projects": {
