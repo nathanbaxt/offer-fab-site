@@ -347,7 +347,9 @@ const mailTo = "mailto:" + home.business.email;
     </div>
     <div class="reveal">
       <div class="bg-paper-2 border line rounded-[3px] p-7 sm:p-9">
-        <form action={home.contact.formEndpoint} method="POST" class="space-y-5">
+        <form name="quote" method="POST" action="/success/" data-netlify="true" netlify-honeypot="bot-field" class="space-y-5">
+          <input type="hidden" name="form-name" value="quote" />
+          <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-[11px] muted uppercase tracking-widest mb-2">Name</label>
