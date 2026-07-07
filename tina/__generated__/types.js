@@ -81,7 +81,11 @@ export const HomePartsFragmentDoc = gql`
     kicker
     heading
     sub
-    companies
+    companies {
+      __typename
+      name
+      logo
+    }
     note
   }
   feature2 {

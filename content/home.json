@@ -2,9 +2,9 @@
   "business": {
     "phone": "0476 558 458",
     "phoneHref": "0476558458",
-    "email": "offerfabrications@gmail.com",
+    "email": "admin@offerfabrications.com",
     "address": "Unit 14/16 Salpietro Street, Bibra Lake WA 6163",
-    "hours": "Mon–Fri · 7:00am – 4:00pm",
+    "hours": "Mon–Fri · 7:30am – 4:00pm",
     "instagram": "@offer_fabrications",
     "instagramUrl": "https://instagram.com/offer_fabrications"
   },
@@ -46,7 +46,7 @@
     "kicker": "Three materials, one shop",
     "heading": "Steel, stainless steel and aluminium all handled in-house.",
     "body": "Offer Fabrications delivers complete fabrication solutions from concept and design through to finished products. By keeping fabrication in-house, we maintain quality, improve turnaround times and provide a seamless experience for our clients across mining, industrial, oil and gas and commercial.",
-    "image": "/assets/img/stainless-cabinet.jpg",
+    "image": "/assets/img/mining-gas-enclosure.jpg",
     "points": [
       { "strong": "Custom projects to production runs.", "rest": "From one-off prototypes and bespoke fabrications to repeat manufacturing, every project is built with the same commitment to quality and precision." },
       { "strong": "Built in Bibra Lake, servicing WA.", "rest": "Designed, fabricated and assembled in our Perth workshop, supporting projects throughout Western Australia." },
@@ -58,17 +58,28 @@
     "heading": "Recent work",
     "sub": "Real fabrication from the Bibra Lake workshop — no stock photos, just the gear we build.",
     "items": [
-      { "image": "/assets/img/mining-gas-enclosure.jpg", "tag": "Mining / Gas", "caption": "On-site valve enclosure" },
-      { "image": "/assets/img/steel-tanks.jpg", "tag": "Steel", "caption": "Fabricated steel tanks" },
-      { "image": "/assets/img/ventilated-enclosures.jpg", "tag": "Enclosures", "caption": "Ventilated equipment housings" },
-      { "image": "/assets/img/blue-bin-branded.jpg", "tag": "Materials Handling", "caption": "Forklift tipping bins" }
+      { "image": "/assets/img/stainless-cabinet.jpg", "tag": "", "caption": "" },
+      { "image": "/assets/img/steel-tanks.jpg", "tag": "", "caption": "" },
+      { "image": "/assets/img/ventilated-enclosures.jpg", "tag": "", "caption": "" },
+      { "image": "/assets/img/blue-bin-branded.jpg", "tag": "", "caption": "" }
     ]
   },
   "projects": {
     "kicker": "Trusted on major sites",
     "heading": "Our fabrication ends up where it matters.",
     "sub": "Work fabricated in our Bibra Lake shop has gone on to serve some of Western Australia's biggest resource and industrial operations.",
-    "companies": ["Rio Tinto", "BHP", "Alcoa"],
+    "companies": [
+      { "name": "Rio Tinto", "logo": "/assets/logos/companies/rio-tinto.png" },
+      { "name": "Alcoa", "logo": "/assets/logos/companies/alcoa.png" },
+      { "name": "BHP", "logo": "/assets/logos/companies/bhp.png" },
+      { "name": "FMG", "logo": "/assets/logos/companies/fmg.png" },
+      { "name": "BP", "logo": "/assets/logos/companies/bp.png" },
+      { "name": "Department of Defence", "logo": "/assets/logos/companies/defence.png" },
+      { "name": "Mineral Resources", "logo": "/assets/logos/companies/mineral-resources.png" },
+      { "name": "Santos", "logo": "/assets/logos/companies/santos.png" },
+      { "name": "DFES", "logo": "/assets/logos/companies/dfes.png" },
+      { "name": "Woodside Energy", "logo": "/assets/logos/companies/woodside.png" }
+    ],
     "note": "Fabrication supplied for projects and contractors working on these sites."
   },
   "feature2": {

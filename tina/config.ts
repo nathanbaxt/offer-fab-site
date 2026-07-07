@@ -140,7 +140,14 @@ export default defineConfig({
               { type: "string", name: "kicker", label: "Label" },
               { type: "string", name: "heading", label: "Heading" },
               { type: "string", name: "sub", label: "Sub-text", ui: { component: "textarea" } },
-              { type: "string", name: "companies", label: "Company names", list: true },
+              {
+                type: "object", name: "companies", label: "Trusted-site logos", list: true,
+                ui: { itemProps: (item) => ({ label: item?.name }) },
+                fields: [
+                  { type: "string", name: "name", label: "Company name" },
+                  { type: "image", name: "logo", label: "Logo (white PNG, transparent background)" },
+                ],
+              },
               { type: "string", name: "note", label: "Small note below" },
             ],
           },

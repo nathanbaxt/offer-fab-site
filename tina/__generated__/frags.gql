@@ -73,7 +73,11 @@ fragment HomeParts on Home {
     kicker
     heading
     sub
-    companies
+    companies {
+      __typename
+      name
+      logo
+    }
     note
   }
   feature2 {

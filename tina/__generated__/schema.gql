@@ -158,11 +158,16 @@ type HomeWork {
   items: [HomeWorkItems]
 }
 
+type HomeProjectsCompanies {
+  name: String
+  logo: String
+}
+
 type HomeProjects {
   kicker: String
   heading: String
   sub: String
-  companies: [String]
+  companies: [HomeProjectsCompanies]
   note: String
 }
 
@@ -325,11 +330,16 @@ input HomeWorkFilter {
   items: HomeWorkItemsFilter
 }
 
+input HomeProjectsCompaniesFilter {
+  name: StringFilter
+  logo: ImageFilter
+}
+
 input HomeProjectsFilter {
   kicker: StringFilter
   heading: StringFilter
   sub: StringFilter
-  companies: StringFilter
+  companies: HomeProjectsCompaniesFilter
   note: StringFilter
 }
 
@@ -505,11 +515,16 @@ input HomeWorkMutation {
   items: [HomeWorkItemsMutation]
 }
 
+input HomeProjectsCompaniesMutation {
+  name: String
+  logo: String
+}
+
 input HomeProjectsMutation {
   kicker: String
   heading: String
   sub: String
-  companies: [String]
+  companies: [HomeProjectsCompaniesMutation]
   note: String
 }
 
