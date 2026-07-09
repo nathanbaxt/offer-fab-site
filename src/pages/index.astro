@@ -20,6 +20,7 @@ const indIcons = [
 ];
 const phoneTel = "tel:" + home.business.phoneHref;
 const mailTo = "mailto:" + home.business.email;
+const marqueeWords = home.capabilities.items.map((c) => c.title);
 ---
 <!DOCTYPE html>
 <html lang="en-AU">
@@ -32,7 +33,39 @@ const mailTo = "mailto:" + home.business.email;
 <meta property="og:description" content="Custom steel, stainless and aluminium fabrication for mining, industrial, commercial and trade — built in Bibra Lake, installed across WA." />
 <meta property="og:image" content="/assets/img/hero-ute-generator.jpg" />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://offerfabrications.com.au/" />
+<link rel="canonical" href="https://offerfabrications.com.au/" />
 <link rel="icon" type="image/png" href="/assets/logo/offer-logo.png" />
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://offerfabrications.com.au/#business",
+  "name": "Offer Fabrications",
+  "description": "Custom steel, stainless steel and aluminium fabrication for mining, industrial, commercial and trade clients — workshop-built in Bibra Lake, Perth WA.",
+  "url": "https://offerfabrications.com.au/",
+  "telephone": home.business.phone,
+  "email": home.business.email,
+  "image": "https://offerfabrications.com.au/assets/img/hero-ute-generator.jpg",
+  "logo": "https://offerfabrications.com.au/assets/logo/offer-logo-full.png",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 14/16 Salpietro Street",
+    "addressLocality": "Bibra Lake",
+    "addressRegion": "WA",
+    "postalCode": "6163",
+    "addressCountry": "AU"
+  },
+  "areaServed": { "@type": "State", "name": "Western Australia" },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "07:30",
+    "closes": "16:00"
+  },
+  "sameAs": ["https://instagram.com/offer_fabrications"],
+  "knowsAbout": ["Steel fabrication", "Stainless steel fabrication", "Aluminium fabrication", "MIG welding", "TIG welding", "CNC cutting and folding", "Production manufacturing"]
+})} />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -183,14 +216,11 @@ const mailTo = "mailto:" + home.business.email;
     </div>
   </div>
   <div class="bg-ink text-white py-6 overflow-hidden">
-    <p class="text-center text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">Fabrication trusted on major WA sites</p>
+    <p class="text-center text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">Steel · Stainless · Aluminium — fabricated in-house in Bibra Lake</p>
     <div class="marquee">
-      <div class="marquee-track">
-        {[...home.projects.companies, ...home.projects.companies].map((c) => (
-          <span class="inline-flex items-center align-middle">
-            <img src={c.logo} alt={c.name} class="h-7 sm:h-9 w-auto object-contain opacity-70 hover:opacity-100 transition" />
-            <span class="diamond">◆</span>
-          </span>
+      <div class="marquee-track font-display font-semibold text-lg sm:text-xl uppercase tracking-wide text-white/75">
+        {[...marqueeWords, ...marqueeWords].map((w) => (
+          <span>{w}<span class="diamond">◆</span></span>
         ))}
       </div>
     </div>

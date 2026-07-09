@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://offerfabrications.com.au/sitemap.xml
