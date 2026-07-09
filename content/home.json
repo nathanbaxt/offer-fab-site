@@ -58,10 +58,10 @@
     "heading": "Recent work",
     "sub": "Real fabrication from the Bibra Lake workshop — no stock photos, just the gear we build.",
     "items": [
-      { "image": "/assets/img/stainless-cabinet.jpg", "tag": "", "caption": "" },
-      { "image": "/assets/img/steel-tanks.jpg", "tag": "", "caption": "" },
-      { "image": "/assets/img/ventilated-enclosures.jpg", "tag": "", "caption": "" },
-      { "image": "/assets/img/blue-bin-branded.jpg", "tag": "", "caption": "" }
+      { "image": "/assets/img/stainless-cabinet.jpg", "tag": "", "caption": "", "alt": "Stainless steel cabinet custom fabricated at Offer Fabrications, Bibra Lake Perth" },
+      { "image": "/assets/img/steel-tanks.jpg", "tag": "", "caption": "", "alt": "Fabricated steel tanks built by Offer Fabrications in Perth WA" },
+      { "image": "/assets/img/ventilated-enclosures.jpg", "tag": "", "caption": "", "alt": "Custom ventilated steel equipment enclosures fabricated in Bibra Lake WA" },
+      { "image": "/assets/img/blue-bin-branded.jpg", "tag": "", "caption": "", "alt": "Custom steel forklift tipping bins fabricated by Offer Fabrications Perth" }
     ]
   },
   "projects": {
@@ -123,6 +123,23 @@
     "heading": "Start your build",
     "sub": "Tell us what you need fabricated. Send a sketch, drawing or photo and we'll come back with a quote — usually within a day or two.",
     "formEndpoint": "https://formspree.io/f/REPLACE_WITH_ENDPOINT"
+  },
+  "faq": {
+    "kicker": "Questions & answers",
+    "heading": "Common questions",
+    "items": [
+      { "q": "What does Offer Fabrications do?", "a": "Offer Fabrications is a metal fabrication workshop in Bibra Lake, Perth, Western Australia. We design and build custom steel, stainless steel and aluminium fabrication for mining, industrial, commercial and trade clients — from one-off custom parts through to full production runs." },
+      { "q": "Where are you based and what areas do you service?", "a": "Our workshop is at Unit 14/16 Salpietro Street, Bibra Lake WA 6163, in Perth's southern industrial belt. We serve Bibra Lake, Cockburn, Henderson, Kwinana, O'Connor, Jandakot and greater Perth, and deliver or arrange transport for completed projects across Western Australia, including the Pilbara and Goldfields mining regions." },
+      { "q": "What materials do you fabricate?", "a": "We work across mild and structural steel, food-grade and marine-grade stainless steel, and aluminium — including MIG and TIG welding, CNC cutting and folding, forming and finishing, all handled in-house." },
+      { "q": "Do you take on one-off custom jobs, or only production runs?", "a": "Both. We handle single custom parts and prototypes right through to low and medium volume production manufacturing, with the same quality and finish on every job." },
+      { "q": "What industries do you work with?", "a": "Mining and resources, oil and gas, construction, marine, civil and infrastructure, and commercial and trade clients across Western Australia." },
+      { "q": "Do you do MIG and TIG welding?", "a": "Yes. We do high-quality MIG and TIG welding across steel, stainless steel and aluminium, built for strength, durability and a clean finish on both one-off and production work." },
+      { "q": "What's the difference between MIG and TIG welding?", "a": "MIG welding is faster and well suited to thicker steel and production work, while TIG welding gives a cleaner, more precise weld that's ideal for stainless steel, aluminium and finer detail work. We do both in-house and choose the right process for each job." },
+      { "q": "How much does custom metal fabrication cost?", "a": "Every job is priced individually — the cost depends on the materials, size, complexity, finish and quantity. Send through your drawing, sketch or photo and we'll come back with a clear, fixed quote, usually within a day or two." },
+      { "q": "Do you do on-site installation?", "a": "We're a workshop-based fabricator. We build in-house at our Bibra Lake workshop and deliver or arrange transport across Perth and Western Australia, rather than doing on-site installation — that focus is how we keep quality and turnaround high." },
+      { "q": "How do I get a quote?", "a": "Send us a sketch, drawing or photo through the contact form, or call 0476 558 458. We'll scope the job, recommend the right build and come back with a clear quote — usually within a day or two." },
+      { "q": "What are your opening hours?", "a": "We're open Monday to Friday, 7:30am to 4:00pm, at our Bibra Lake workshop." }
+    ]
   },
   "ctaBanner": {
     "heading": "Got a job that needs building properly?",

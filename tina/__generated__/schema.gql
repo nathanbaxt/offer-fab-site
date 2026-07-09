@@ -148,6 +148,7 @@ type HomeWorkItems {
   image: String
   tag: String
   caption: String
+  alt: String
   size: String
 }
 
@@ -213,6 +214,17 @@ type HomeContact {
   formEndpoint: String
 }
 
+type HomeFaqItems {
+  q: String
+  a: String
+}
+
+type HomeFaq {
+  kicker: String
+  heading: String
+  items: [HomeFaqItems]
+}
+
 type HomeCtaBanner {
   heading: String
   image: String
@@ -238,6 +250,7 @@ type Home implements Node & Document {
   industries: HomeIndustries
   process: HomeProcess
   contact: HomeContact
+  faq: HomeFaq
   ctaBanner: HomeCtaBanner
   footer: HomeFooter
   id: ID!
@@ -320,6 +333,7 @@ input HomeWorkItemsFilter {
   image: ImageFilter
   tag: StringFilter
   caption: StringFilter
+  alt: StringFilter
   size: StringFilter
 }
 
@@ -385,6 +399,17 @@ input HomeContactFilter {
   formEndpoint: StringFilter
 }
 
+input HomeFaqItemsFilter {
+  q: StringFilter
+  a: StringFilter
+}
+
+input HomeFaqFilter {
+  kicker: StringFilter
+  heading: StringFilter
+  items: HomeFaqItemsFilter
+}
+
 input HomeCtaBannerFilter {
   heading: StringFilter
   image: ImageFilter
@@ -410,6 +435,7 @@ input HomeFilter {
   industries: HomeIndustriesFilter
   process: HomeProcessFilter
   contact: HomeContactFilter
+  faq: HomeFaqFilter
   ctaBanner: HomeCtaBannerFilter
   footer: HomeFooterFilter
 }
@@ -505,6 +531,7 @@ input HomeWorkItemsMutation {
   image: String
   tag: String
   caption: String
+  alt: String
   size: String
 }
 
@@ -570,6 +597,17 @@ input HomeContactMutation {
   formEndpoint: String
 }
 
+input HomeFaqItemsMutation {
+  q: String
+  a: String
+}
+
+input HomeFaqMutation {
+  kicker: String
+  heading: String
+  items: [HomeFaqItemsMutation]
+}
+
 input HomeCtaBannerMutation {
   heading: String
   image: String
@@ -595,6 +633,7 @@ input HomeMutation {
   industries: HomeIndustriesMutation
   process: HomeProcessMutation
   contact: HomeContactMutation
+  faq: HomeFaqMutation
   ctaBanner: HomeCtaBannerMutation
   footer: HomeFooterMutation
 }

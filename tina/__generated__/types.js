@@ -73,6 +73,7 @@ export const HomePartsFragmentDoc = gql`
       image
       tag
       caption
+      alt
       size
     }
   }
@@ -127,6 +128,16 @@ export const HomePartsFragmentDoc = gql`
     heading
     sub
     formEndpoint
+  }
+  faq {
+    __typename
+    kicker
+    heading
+    items {
+      __typename
+      q
+      a
+    }
   }
   ctaBanner {
     __typename

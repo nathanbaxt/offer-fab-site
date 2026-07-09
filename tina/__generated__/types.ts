@@ -235,6 +235,7 @@ export type HomeWorkItems = {
   image?: Maybe<Scalars['String']['output']>;
   tag?: Maybe<Scalars['String']['output']>;
   caption?: Maybe<Scalars['String']['output']>;
+  alt?: Maybe<Scalars['String']['output']>;
   size?: Maybe<Scalars['String']['output']>;
 };
 
@@ -310,6 +311,19 @@ export type HomeContact = {
   formEndpoint?: Maybe<Scalars['String']['output']>;
 };
 
+export type HomeFaqItems = {
+  __typename?: 'HomeFaqItems';
+  q?: Maybe<Scalars['String']['output']>;
+  a?: Maybe<Scalars['String']['output']>;
+};
+
+export type HomeFaq = {
+  __typename?: 'HomeFaq';
+  kicker?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  items?: Maybe<Array<Maybe<HomeFaqItems>>>;
+};
+
 export type HomeCtaBanner = {
   __typename?: 'HomeCtaBanner';
   heading?: Maybe<Scalars['String']['output']>;
@@ -338,6 +352,7 @@ export type Home = Node & Document & {
   industries?: Maybe<HomeIndustries>;
   process?: Maybe<HomeProcess>;
   contact?: Maybe<HomeContact>;
+  faq?: Maybe<HomeFaq>;
   ctaBanner?: Maybe<HomeCtaBanner>;
   footer?: Maybe<HomeFooter>;
   id: Scalars['ID']['output'];
@@ -420,6 +435,7 @@ export type HomeWorkItemsFilter = {
   image?: InputMaybe<ImageFilter>;
   tag?: InputMaybe<StringFilter>;
   caption?: InputMaybe<StringFilter>;
+  alt?: InputMaybe<StringFilter>;
   size?: InputMaybe<StringFilter>;
 };
 
@@ -485,6 +501,17 @@ export type HomeContactFilter = {
   formEndpoint?: InputMaybe<StringFilter>;
 };
 
+export type HomeFaqItemsFilter = {
+  q?: InputMaybe<StringFilter>;
+  a?: InputMaybe<StringFilter>;
+};
+
+export type HomeFaqFilter = {
+  kicker?: InputMaybe<StringFilter>;
+  heading?: InputMaybe<StringFilter>;
+  items?: InputMaybe<HomeFaqItemsFilter>;
+};
+
 export type HomeCtaBannerFilter = {
   heading?: InputMaybe<StringFilter>;
   image?: InputMaybe<ImageFilter>;
@@ -510,6 +537,7 @@ export type HomeFilter = {
   industries?: InputMaybe<HomeIndustriesFilter>;
   process?: InputMaybe<HomeProcessFilter>;
   contact?: InputMaybe<HomeContactFilter>;
+  faq?: InputMaybe<HomeFaqFilter>;
   ctaBanner?: InputMaybe<HomeCtaBannerFilter>;
   footer?: InputMaybe<HomeFooterFilter>;
 };
@@ -653,6 +681,7 @@ export type HomeWorkItemsMutation = {
   image?: InputMaybe<Scalars['String']['input']>;
   tag?: InputMaybe<Scalars['String']['input']>;
   caption?: InputMaybe<Scalars['String']['input']>;
+  alt?: InputMaybe<Scalars['String']['input']>;
   size?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -718,6 +747,17 @@ export type HomeContactMutation = {
   formEndpoint?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type HomeFaqItemsMutation = {
+  q?: InputMaybe<Scalars['String']['input']>;
+  a?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeFaqMutation = {
+  kicker?: InputMaybe<Scalars['String']['input']>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  items?: InputMaybe<Array<InputMaybe<HomeFaqItemsMutation>>>;
+};
+
 export type HomeCtaBannerMutation = {
   heading?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
@@ -743,18 +783,19 @@ export type HomeMutation = {
   industries?: InputMaybe<HomeIndustriesMutation>;
   process?: InputMaybe<HomeProcessMutation>;
   contact?: InputMaybe<HomeContactMutation>;
+  faq?: InputMaybe<HomeFaqMutation>;
   ctaBanner?: InputMaybe<HomeCtaBannerMutation>;
   footer?: InputMaybe<HomeFooterMutation>;
 };
 
-export type HomePartsFragment = { __typename: 'Home', business?: { __typename: 'HomeBusiness', phone?: string | null, phoneHref?: string | null, email?: string | null, address?: string | null, hours?: string | null, instagram?: string | null, instagramUrl?: string | null } | null, hero?: { __typename: 'HomeHero', kicker?: string | null, titleLine1?: string | null, titleLine2?: string | null, titleLine3?: string | null, sub?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, image?: string | null } | null, materials?: Array<{ __typename: 'HomeMaterials', name?: string | null, sub?: string | null } | null> | null, intro?: { __typename: 'HomeIntro', kicker?: string | null, heading?: string | null, body?: string | null } | null, capabilities?: { __typename: 'HomeCapabilities', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeCapabilitiesItems', title?: string | null, body?: string | null } | null> | null } | null, feature1?: { __typename: 'HomeFeature1', kicker?: string | null, heading?: string | null, body?: string | null, image?: string | null, points?: Array<{ __typename: 'HomeFeature1Points', strong?: string | null, rest?: string | null } | null> | null } | null, work?: { __typename: 'HomeWork', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeWorkItems', image?: string | null, tag?: string | null, caption?: string | null, size?: string | null } | null> | null } | null, projects?: { __typename: 'HomeProjects', kicker?: string | null, heading?: string | null, sub?: string | null, note?: string | null, companies?: Array<{ __typename: 'HomeProjectsCompanies', name?: string | null, logo?: string | null } | null> | null } | null, feature2?: { __typename: 'HomeFeature2', kicker?: string | null, headingLine1?: string | null, headingLine2?: string | null, body?: string | null, cta?: string | null, image?: string | null } | null, stats?: Array<{ __typename: 'HomeStats', value?: string | null, label?: string | null } | null> | null, industries?: { __typename: 'HomeIndustries', kicker?: string | null, heading?: string | null, items?: Array<{ __typename: 'HomeIndustriesItems', name?: string | null } | null> | null } | null, process?: { __typename: 'HomeProcess', kicker?: string | null, heading?: string | null, steps?: Array<{ __typename: 'HomeProcessSteps', title?: string | null, body?: string | null } | null> | null } | null, contact?: { __typename: 'HomeContact', kicker?: string | null, heading?: string | null, sub?: string | null, formEndpoint?: string | null } | null, ctaBanner?: { __typename: 'HomeCtaBanner', heading?: string | null, image?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null } | null, footer?: { __typename: 'HomeFooter', blurb?: string | null } | null };
+export type HomePartsFragment = { __typename: 'Home', business?: { __typename: 'HomeBusiness', phone?: string | null, phoneHref?: string | null, email?: string | null, address?: string | null, hours?: string | null, instagram?: string | null, instagramUrl?: string | null } | null, hero?: { __typename: 'HomeHero', kicker?: string | null, titleLine1?: string | null, titleLine2?: string | null, titleLine3?: string | null, sub?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, image?: string | null } | null, materials?: Array<{ __typename: 'HomeMaterials', name?: string | null, sub?: string | null } | null> | null, intro?: { __typename: 'HomeIntro', kicker?: string | null, heading?: string | null, body?: string | null } | null, capabilities?: { __typename: 'HomeCapabilities', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeCapabilitiesItems', title?: string | null, body?: string | null } | null> | null } | null, feature1?: { __typename: 'HomeFeature1', kicker?: string | null, heading?: string | null, body?: string | null, image?: string | null, points?: Array<{ __typename: 'HomeFeature1Points', strong?: string | null, rest?: string | null } | null> | null } | null, work?: { __typename: 'HomeWork', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeWorkItems', image?: string | null, tag?: string | null, caption?: string | null, alt?: string | null, size?: string | null } | null> | null } | null, projects?: { __typename: 'HomeProjects', kicker?: string | null, heading?: string | null, sub?: string | null, note?: string | null, companies?: Array<{ __typename: 'HomeProjectsCompanies', name?: string | null, logo?: string | null } | null> | null } | null, feature2?: { __typename: 'HomeFeature2', kicker?: string | null, headingLine1?: string | null, headingLine2?: string | null, body?: string | null, cta?: string | null, image?: string | null } | null, stats?: Array<{ __typename: 'HomeStats', value?: string | null, label?: string | null } | null> | null, industries?: { __typename: 'HomeIndustries', kicker?: string | null, heading?: string | null, items?: Array<{ __typename: 'HomeIndustriesItems', name?: string | null } | null> | null } | null, process?: { __typename: 'HomeProcess', kicker?: string | null, heading?: string | null, steps?: Array<{ __typename: 'HomeProcessSteps', title?: string | null, body?: string | null } | null> | null } | null, contact?: { __typename: 'HomeContact', kicker?: string | null, heading?: string | null, sub?: string | null, formEndpoint?: string | null } | null, faq?: { __typename: 'HomeFaq', kicker?: string | null, heading?: string | null, items?: Array<{ __typename: 'HomeFaqItems', q?: string | null, a?: string | null } | null> | null } | null, ctaBanner?: { __typename: 'HomeCtaBanner', heading?: string | null, image?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null } | null, footer?: { __typename: 'HomeFooter', blurb?: string | null } | null };
 
 export type HomeQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type HomeQuery = { __typename?: 'Query', home: { __typename: 'Home', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, business?: { __typename: 'HomeBusiness', phone?: string | null, phoneHref?: string | null, email?: string | null, address?: string | null, hours?: string | null, instagram?: string | null, instagramUrl?: string | null } | null, hero?: { __typename: 'HomeHero', kicker?: string | null, titleLine1?: string | null, titleLine2?: string | null, titleLine3?: string | null, sub?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, image?: string | null } | null, materials?: Array<{ __typename: 'HomeMaterials', name?: string | null, sub?: string | null } | null> | null, intro?: { __typename: 'HomeIntro', kicker?: string | null, heading?: string | null, body?: string | null } | null, capabilities?: { __typename: 'HomeCapabilities', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeCapabilitiesItems', title?: string | null, body?: string | null } | null> | null } | null, feature1?: { __typename: 'HomeFeature1', kicker?: string | null, heading?: string | null, body?: string | null, image?: string | null, points?: Array<{ __typename: 'HomeFeature1Points', strong?: string | null, rest?: string | null } | null> | null } | null, work?: { __typename: 'HomeWork', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeWorkItems', image?: string | null, tag?: string | null, caption?: string | null, size?: string | null } | null> | null } | null, projects?: { __typename: 'HomeProjects', kicker?: string | null, heading?: string | null, sub?: string | null, note?: string | null, companies?: Array<{ __typename: 'HomeProjectsCompanies', name?: string | null, logo?: string | null } | null> | null } | null, feature2?: { __typename: 'HomeFeature2', kicker?: string | null, headingLine1?: string | null, headingLine2?: string | null, body?: string | null, cta?: string | null, image?: string | null } | null, stats?: Array<{ __typename: 'HomeStats', value?: string | null, label?: string | null } | null> | null, industries?: { __typename: 'HomeIndustries', kicker?: string | null, heading?: string | null, items?: Array<{ __typename: 'HomeIndustriesItems', name?: string | null } | null> | null } | null, process?: { __typename: 'HomeProcess', kicker?: string | null, heading?: string | null, steps?: Array<{ __typename: 'HomeProcessSteps', title?: string | null, body?: string | null } | null> | null } | null, contact?: { __typename: 'HomeContact', kicker?: string | null, heading?: string | null, sub?: string | null, formEndpoint?: string | null } | null, ctaBanner?: { __typename: 'HomeCtaBanner', heading?: string | null, image?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null } | null, footer?: { __typename: 'HomeFooter', blurb?: string | null } | null } };
+export type HomeQuery = { __typename?: 'Query', home: { __typename: 'Home', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, business?: { __typename: 'HomeBusiness', phone?: string | null, phoneHref?: string | null, email?: string | null, address?: string | null, hours?: string | null, instagram?: string | null, instagramUrl?: string | null } | null, hero?: { __typename: 'HomeHero', kicker?: string | null, titleLine1?: string | null, titleLine2?: string | null, titleLine3?: string | null, sub?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, image?: string | null } | null, materials?: Array<{ __typename: 'HomeMaterials', name?: string | null, sub?: string | null } | null> | null, intro?: { __typename: 'HomeIntro', kicker?: string | null, heading?: string | null, body?: string | null } | null, capabilities?: { __typename: 'HomeCapabilities', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeCapabilitiesItems', title?: string | null, body?: string | null } | null> | null } | null, feature1?: { __typename: 'HomeFeature1', kicker?: string | null, heading?: string | null, body?: string | null, image?: string | null, points?: Array<{ __typename: 'HomeFeature1Points', strong?: string | null, rest?: string | null } | null> | null } | null, work?: { __typename: 'HomeWork', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeWorkItems', image?: string | null, tag?: string | null, caption?: string | null, alt?: string | null, size?: string | null } | null> | null } | null, projects?: { __typename: 'HomeProjects', kicker?: string | null, heading?: string | null, sub?: string | null, note?: string | null, companies?: Array<{ __typename: 'HomeProjectsCompanies', name?: string | null, logo?: string | null } | null> | null } | null, feature2?: { __typename: 'HomeFeature2', kicker?: string | null, headingLine1?: string | null, headingLine2?: string | null, body?: string | null, cta?: string | null, image?: string | null } | null, stats?: Array<{ __typename: 'HomeStats', value?: string | null, label?: string | null } | null> | null, industries?: { __typename: 'HomeIndustries', kicker?: string | null, heading?: string | null, items?: Array<{ __typename: 'HomeIndustriesItems', name?: string | null } | null> | null } | null, process?: { __typename: 'HomeProcess', kicker?: string | null, heading?: string | null, steps?: Array<{ __typename: 'HomeProcessSteps', title?: string | null, body?: string | null } | null> | null } | null, contact?: { __typename: 'HomeContact', kicker?: string | null, heading?: string | null, sub?: string | null, formEndpoint?: string | null } | null, faq?: { __typename: 'HomeFaq', kicker?: string | null, heading?: string | null, items?: Array<{ __typename: 'HomeFaqItems', q?: string | null, a?: string | null } | null> | null } | null, ctaBanner?: { __typename: 'HomeCtaBanner', heading?: string | null, image?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null } | null, footer?: { __typename: 'HomeFooter', blurb?: string | null } | null } };
 
 export type HomeConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -766,7 +807,7 @@ export type HomeConnectionQueryVariables = Exact<{
 }>;
 
 
-export type HomeConnectionQuery = { __typename?: 'Query', homeConnection: { __typename?: 'HomeConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeConnectionEdges', cursor: string, node?: { __typename: 'Home', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, business?: { __typename: 'HomeBusiness', phone?: string | null, phoneHref?: string | null, email?: string | null, address?: string | null, hours?: string | null, instagram?: string | null, instagramUrl?: string | null } | null, hero?: { __typename: 'HomeHero', kicker?: string | null, titleLine1?: string | null, titleLine2?: string | null, titleLine3?: string | null, sub?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, image?: string | null } | null, materials?: Array<{ __typename: 'HomeMaterials', name?: string | null, sub?: string | null } | null> | null, intro?: { __typename: 'HomeIntro', kicker?: string | null, heading?: string | null, body?: string | null } | null, capabilities?: { __typename: 'HomeCapabilities', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeCapabilitiesItems', title?: string | null, body?: string | null } | null> | null } | null, feature1?: { __typename: 'HomeFeature1', kicker?: string | null, heading?: string | null, body?: string | null, image?: string | null, points?: Array<{ __typename: 'HomeFeature1Points', strong?: string | null, rest?: string | null } | null> | null } | null, work?: { __typename: 'HomeWork', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeWorkItems', image?: string | null, tag?: string | null, caption?: string | null, size?: string | null } | null> | null } | null, projects?: { __typename: 'HomeProjects', kicker?: string | null, heading?: string | null, sub?: string | null, note?: string | null, companies?: Array<{ __typename: 'HomeProjectsCompanies', name?: string | null, logo?: string | null } | null> | null } | null, feature2?: { __typename: 'HomeFeature2', kicker?: string | null, headingLine1?: string | null, headingLine2?: string | null, body?: string | null, cta?: string | null, image?: string | null } | null, stats?: Array<{ __typename: 'HomeStats', value?: string | null, label?: string | null } | null> | null, industries?: { __typename: 'HomeIndustries', kicker?: string | null, heading?: string | null, items?: Array<{ __typename: 'HomeIndustriesItems', name?: string | null } | null> | null } | null, process?: { __typename: 'HomeProcess', kicker?: string | null, heading?: string | null, steps?: Array<{ __typename: 'HomeProcessSteps', title?: string | null, body?: string | null } | null> | null } | null, contact?: { __typename: 'HomeContact', kicker?: string | null, heading?: string | null, sub?: string | null, formEndpoint?: string | null } | null, ctaBanner?: { __typename: 'HomeCtaBanner', heading?: string | null, image?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null } | null, footer?: { __typename: 'HomeFooter', blurb?: string | null } | null } | null } | null> | null } };
+export type HomeConnectionQuery = { __typename?: 'Query', homeConnection: { __typename?: 'HomeConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeConnectionEdges', cursor: string, node?: { __typename: 'Home', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, business?: { __typename: 'HomeBusiness', phone?: string | null, phoneHref?: string | null, email?: string | null, address?: string | null, hours?: string | null, instagram?: string | null, instagramUrl?: string | null } | null, hero?: { __typename: 'HomeHero', kicker?: string | null, titleLine1?: string | null, titleLine2?: string | null, titleLine3?: string | null, sub?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, image?: string | null } | null, materials?: Array<{ __typename: 'HomeMaterials', name?: string | null, sub?: string | null } | null> | null, intro?: { __typename: 'HomeIntro', kicker?: string | null, heading?: string | null, body?: string | null } | null, capabilities?: { __typename: 'HomeCapabilities', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeCapabilitiesItems', title?: string | null, body?: string | null } | null> | null } | null, feature1?: { __typename: 'HomeFeature1', kicker?: string | null, heading?: string | null, body?: string | null, image?: string | null, points?: Array<{ __typename: 'HomeFeature1Points', strong?: string | null, rest?: string | null } | null> | null } | null, work?: { __typename: 'HomeWork', kicker?: string | null, heading?: string | null, sub?: string | null, items?: Array<{ __typename: 'HomeWorkItems', image?: string | null, tag?: string | null, caption?: string | null, alt?: string | null, size?: string | null } | null> | null } | null, projects?: { __typename: 'HomeProjects', kicker?: string | null, heading?: string | null, sub?: string | null, note?: string | null, companies?: Array<{ __typename: 'HomeProjectsCompanies', name?: string | null, logo?: string | null } | null> | null } | null, feature2?: { __typename: 'HomeFeature2', kicker?: string | null, headingLine1?: string | null, headingLine2?: string | null, body?: string | null, cta?: string | null, image?: string | null } | null, stats?: Array<{ __typename: 'HomeStats', value?: string | null, label?: string | null } | null> | null, industries?: { __typename: 'HomeIndustries', kicker?: string | null, heading?: string | null, items?: Array<{ __typename: 'HomeIndustriesItems', name?: string | null } | null> | null } | null, process?: { __typename: 'HomeProcess', kicker?: string | null, heading?: string | null, steps?: Array<{ __typename: 'HomeProcessSteps', title?: string | null, body?: string | null } | null> | null } | null, contact?: { __typename: 'HomeContact', kicker?: string | null, heading?: string | null, sub?: string | null, formEndpoint?: string | null } | null, faq?: { __typename: 'HomeFaq', kicker?: string | null, heading?: string | null, items?: Array<{ __typename: 'HomeFaqItems', q?: string | null, a?: string | null } | null> | null } | null, ctaBanner?: { __typename: 'HomeCtaBanner', heading?: string | null, image?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null } | null, footer?: { __typename: 'HomeFooter', blurb?: string | null } | null } | null } | null> | null } };
 
 export const HomePartsFragmentDoc = gql`
     fragment HomeParts on Home {
@@ -836,6 +877,7 @@ export const HomePartsFragmentDoc = gql`
       image
       tag
       caption
+      alt
       size
     }
   }
@@ -890,6 +932,16 @@ export const HomePartsFragmentDoc = gql`
     heading
     sub
     formEndpoint
+  }
+  faq {
+    __typename
+    kicker
+    heading
+    items {
+      __typename
+      q
+      a
+    }
   }
   ctaBanner {
     __typename

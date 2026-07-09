@@ -65,6 +65,7 @@ fragment HomeParts on Home {
       image
       tag
       caption
+      alt
       size
     }
   }
@@ -119,6 +120,16 @@ fragment HomeParts on Home {
     heading
     sub
     formEndpoint
+  }
+  faq {
+    __typename
+    kicker
+    heading
+    items {
+      __typename
+      q
+      a
+    }
   }
   ctaBanner {
     __typename

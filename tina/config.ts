@@ -127,6 +127,7 @@ export default defineConfig({
                   { type: "image", name: "image", label: "Photo" },
                   { type: "string", name: "tag", label: "Tag (optional, e.g. Mining / Gas)" },
                   { type: "string", name: "caption", label: "Caption" },
+                  { type: "string", name: "alt", label: "Alt text (image description for SEO / screen readers)" },
                   { type: "string", name: "size", label: "Tile size", options: ["small", "wide", "large"] },
                 ],
               },
@@ -215,6 +216,23 @@ export default defineConfig({
               { type: "string", name: "heading", label: "Heading" },
               { type: "string", name: "sub", label: "Sub-text", ui: { component: "textarea" } },
               { type: "string", name: "formEndpoint", label: "Quote form endpoint (Formspree/Netlify)" },
+            ],
+          },
+          {
+            type: "object",
+            name: "faq",
+            label: "FAQ section",
+            fields: [
+              { type: "string", name: "kicker", label: "Label" },
+              { type: "string", name: "heading", label: "Heading" },
+              {
+                type: "object", name: "items", label: "Questions", list: true,
+                ui: { itemProps: (item) => ({ label: item?.q }) },
+                fields: [
+                  { type: "string", name: "q", label: "Question" },
+                  { type: "string", name: "a", label: "Answer", ui: { component: "textarea" } },
+                ],
+              },
             ],
           },
           {

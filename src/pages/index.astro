@@ -21,51 +21,98 @@ const indIcons = [
 const phoneTel = "tel:" + home.business.phoneHref;
 const mailTo = "mailto:" + home.business.email;
 const marqueeWords = home.capabilities.items.map((c) => c.title);
+
+const SITE = "https://offerfabrications.com.au";
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": SITE + "/#business",
+      "name": "Offer Fabrications",
+      "description": "Metal fabrication workshop in Bibra Lake, Perth WA. Custom steel, stainless steel and aluminium fabrication, MIG & TIG welding, CNC cutting and folding, and production manufacturing for mining, industrial, commercial and trade clients across Western Australia.",
+      "url": SITE + "/",
+      "telephone": home.business.phone,
+      "email": home.business.email,
+      "image": SITE + "/assets/img/hero-ute-generator.jpg",
+      "logo": SITE + "/assets/logo/offer-logo-full.png",
+      "priceRange": "$$",
+      "currenciesAccepted": "AUD",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit 14/16 Salpietro Street",
+        "addressLocality": "Bibra Lake",
+        "addressRegion": "WA",
+        "postalCode": "6163",
+        "addressCountry": "AU"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": -32.1016, "longitude": 115.8205 },
+      "hasMap": "https://www.google.com/maps?q=Salpietro+Street+Bibra+Lake+WA+6163",
+      "areaServed": [
+        { "@type": "State", "name": "Western Australia" },
+        { "@type": "City", "name": "Perth" }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:30",
+        "closes": "16:00"
+      },
+      "sameAs": [home.business.instagramUrl],
+      "knowsAbout": ["Steel fabrication", "Stainless steel fabrication", "Aluminium fabrication", "MIG welding", "TIG welding", "CNC cutting and folding", "Production manufacturing", "Sheet metal fabrication"],
+      "makesOffer": home.capabilities.items.map((c) => ({
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": c.title, "description": c.body, "areaServed": "Western Australia", "provider": { "@id": SITE + "/#business" } }
+      }))
+    },
+    {
+      "@type": "WebSite",
+      "@id": SITE + "/#website",
+      "url": SITE + "/",
+      "name": "Offer Fabrications",
+      "inLanguage": "en-AU",
+      "publisher": { "@id": SITE + "/#business" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": SITE + "/#faq",
+      "mainEntity": home.faq.items.map((f) => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    }
+  ]
+};
 ---
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Offer Fabrications | Custom Steel, Stainless & Aluminium Fabrication — Bibra Lake, Perth WA</title>
-<meta name="description" content="Offer Fabrications is a Bibra Lake metal fabrication workshop delivering custom steel, stainless and aluminium fabrication for mining, industrial, commercial and trade clients across WA. Workshop-built and site-installed." />
+<title>Custom Metal Fabrication Perth | Steel, Stainless & Aluminium — Offer Fabrications, Bibra Lake WA</title>
+<meta name="description" content="Offer Fabrications is a Bibra Lake metal fabrication workshop in Perth WA — custom steel, stainless steel and aluminium fabrication, MIG & TIG welding and CNC cutting & folding for mining, industrial, commercial and trade. One-off jobs and production runs, delivered across Western Australia." />
 <meta property="og:title" content="Offer Fabrications — Custom Metal Fabrication, Perth WA" />
-<meta property="og:description" content="Custom steel, stainless and aluminium fabrication for mining, industrial, commercial and trade — built in Bibra Lake, installed across WA." />
-<meta property="og:image" content="/assets/img/hero-ute-generator.jpg" />
+<meta property="og:description" content="Custom steel, stainless and aluminium fabrication for mining, industrial, commercial and trade — built in Bibra Lake, delivered across WA." />
+<meta property="og:image" content="https://offerfabrications.com.au/assets/img/hero-ute-generator.jpg" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://offerfabrications.com.au/" />
+<meta property="og:site_name" content="Offer Fabrications" />
+<meta property="og:locale" content="en_AU" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Offer Fabrications — Custom Metal Fabrication, Perth WA" />
+<meta name="twitter:description" content="Custom steel, stainless and aluminium fabrication for mining, industrial, commercial and trade — built in Bibra Lake, delivered across WA." />
+<meta name="twitter:image" content="https://offerfabrications.com.au/assets/img/hero-ute-generator.jpg" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="geo.region" content="AU-WA" />
+<meta name="geo.placename" content="Bibra Lake, Perth, Western Australia" />
+<meta name="geo.position" content="-32.1016;115.8205" />
+<meta name="ICBM" content="-32.1016, 115.8205" />
+<meta name="author" content="Offer Fabrications" />
+<meta name="keywords" content="metal fabrication Perth, steel fabrication Perth, stainless steel fabrication, aluminium fabrication, MIG TIG welding, CNC cutting and folding, custom fabrication Bibra Lake, mining fabrication WA" />
 <link rel="canonical" href="https://offerfabrications.com.au/" />
 <link rel="icon" type="image/png" href="/assets/logo/offer-logo.png" />
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://offerfabrications.com.au/#business",
-  "name": "Offer Fabrications",
-  "description": "Custom steel, stainless steel and aluminium fabrication for mining, industrial, commercial and trade clients — workshop-built in Bibra Lake, Perth WA.",
-  "url": "https://offerfabrications.com.au/",
-  "telephone": home.business.phone,
-  "email": home.business.email,
-  "image": "https://offerfabrications.com.au/assets/img/hero-ute-generator.jpg",
-  "logo": "https://offerfabrications.com.au/assets/logo/offer-logo-full.png",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Unit 14/16 Salpietro Street",
-    "addressLocality": "Bibra Lake",
-    "addressRegion": "WA",
-    "postalCode": "6163",
-    "addressCountry": "AU"
-  },
-  "areaServed": { "@type": "State", "name": "Western Australia" },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "07:30",
-    "closes": "16:00"
-  },
-  "sameAs": ["https://instagram.com/offer_fabrications"],
-  "knowsAbout": ["Steel fabrication", "Stainless steel fabrication", "Aluminium fabrication", "MIG welding", "TIG welding", "CNC cutting and folding", "Production manufacturing"]
-})} />
+<script type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -130,6 +177,8 @@ const marqueeWords = home.capabilities.items.map((c) => c.title);
   ::selection { background: var(--accent); color:#fff; }
   a { text-decoration:none; }
   section[id] { scroll-margin-top: 76px; }
+  summary::-webkit-details-marker { display:none; }
+  summary::marker { content:""; }
   #mobileMenu { transition: opacity .3s ease, visibility .3s ease; }
   #mobileMenu.hidden-menu { opacity:0; visibility:hidden; pointer-events:none; }
   #mobileBar { box-shadow: 0 -10px 30px -12px rgba(0,0,0,.25); }
@@ -267,7 +316,7 @@ const marqueeWords = home.capabilities.items.map((c) => c.title);
 <section id="about" class="max-w-[1280px] mx-auto px-6 py-20 lg:py-28">
   <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
     <div class="reveal ring-frame zoom rounded-[3px]">
-      <img src={home.feature1.image} alt="Fabrication by Offer Fabrications" class="w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] object-cover rounded-[3px]" />
+      <img src={home.feature1.image} alt="Custom steel valve enclosure with pipework, fabricated by Offer Fabrications in Bibra Lake WA" loading="lazy" decoding="async" class="w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] object-cover rounded-[3px]" />
     </div>
     <div class="reveal">
       <div class="kicker mb-5">{home.feature1.kicker}</div>
@@ -295,7 +344,7 @@ const marqueeWords = home.capabilities.items.map((c) => c.title);
     <div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
       {home.work.items.map((w) => (
         <figure class="zoom relative rounded-[3px] overflow-hidden reveal">
-          <img src={w.image} alt={w.caption || "Fabrication by Offer Fabrications"} class="w-full aspect-[4/3] object-cover" />
+          <img src={w.image} alt={w.alt || w.caption || "Fabrication by Offer Fabrications"} loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover" />
           {w.caption && (
             <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/75 to-transparent text-white">
               {w.tag && <span class="text-[11px] tracking-widest uppercase text-white/70 font-medium">{w.tag}</span>}
@@ -340,6 +389,27 @@ const marqueeWords = home.capabilities.items.map((c) => c.title);
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
       {home.process.steps.map((st, i) => (
         <div class="reveal"><div class="font-display font-bold text-5xl accent">{String(i + 1).padStart(2, '0')}</div><div class="h-px w-full my-5" style="background:var(--line)"></div><h3 class="font-display font-bold text-xl mb-2">{st.title}</h3><p class="muted text-[.95rem]">{st.body}</p></div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="bg-paper-2 border-y line">
+  <div class="max-w-[900px] mx-auto px-6 py-20 lg:py-28">
+    <div class="reveal mb-10">
+      <div class="kicker mb-4">{home.faq.kicker}</div>
+      <h2 class="h-sec font-display">{home.faq.heading}</h2>
+    </div>
+    <div class="reveal border-t border-b line">
+      {home.faq.items.map((f) => (
+        <details class="group border-b line last:border-b-0 py-5">
+          <summary class="flex items-center justify-between gap-6 cursor-pointer list-none font-display font-semibold text-[1.08rem] leading-snug">
+            <span>{f.q}</span>
+            <span class="accent shrink-0 transition-transform duration-200 group-open:rotate-45 text-2xl leading-none">+</span>
+          </summary>
+          <p class="muted mt-3 leading-relaxed text-[.98rem] max-w-2xl">{f.a}</p>
+        </details>
       ))}
     </div>
   </div>
@@ -445,6 +515,7 @@ const marqueeWords = home.capabilities.items.map((c) => c.title);
         <li><a href="#work" class="hover:text-white transition">Our Work</a></li>
         <li><a href="#industries" class="hover:text-white transition">Industries</a></li>
         <li><a href="#about" class="hover:text-white transition">About</a></li>
+        <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
         <li><a href="#contact" class="hover:text-white transition">Get a Quote</a></li>
       </ul>
     </div>

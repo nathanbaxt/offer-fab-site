@@ -1,4 +1,15 @@
+# robots.txt — Offer Fabrications
+# Posture: maximise discoverability + AI answer-engine citation.
+# A permissive default already allows every well-behaved crawler and AI bot
+# (Googlebot, Bingbot, GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot,
+#  PerplexityBot, Applebot, Amazonbot, CCBot, etc.). We want them in.
+
 User-agent: *
 Allow: /
 
+# Discourage only the worst-behaved scraper (aggressive, ignores norms).
+User-agent: Bytespider
+Disallow: /
+
 Sitemap: https://offerfabrications.com.au/sitemap.xml
+# AI crawler index: https://offerfabrications.com.au/llms.txt
