@@ -1,0 +1,167 @@
+---
+import Location from "../../layouts/Location.astro";
+import services from "../../../content/services.json";
+import homeData from "../../../content/home.json";
+const home = homeData;
+const SITE = "https://offerfabrications.com.au";
+
+export async function getStaticPaths() {
+  const svcs = (await import("../../../content/services.json")).default;
+  return svcs.map((s) => ({ params: { slug: s.slug }, props: { svc: s } }));
+}
+
+const { svc } = Astro.props;
+const canonical = `${SITE}/services/${svc.slug}/`;
+const phoneTel = "tel:" + home.business.phoneHref;
+
+const related = (svc.related || [])
+  .map((r) => services.find((s) => s.slug === r))
+  .filter(Boolean);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": `${svc.name} — Perth WA`,
+      "serviceType": svc.name,
+      "description": svc.metaDescription,
+      "areaServed": { "@type": "State", "name": "Western Australia" },
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": SITE + "/#business",
+        "name": "Offer Fabrications",
+        "telephone": home.business.phone,
+        "url": SITE + "/",
+        "image": SITE + "/assets/img/hero-ute-generator.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Unit 14/16 Salpietro Street",
+          "addressLocality": "Bibra Lake",
+          "addressRegion": "WA",
+          "postalCode": "6163",
+          "addressCountry": "AU"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": (svc.faqs || []).map((f) => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": SITE + "/services/" },
+        { "@type": "ListItem", "position": 3, "name": svc.name, "item": canonical }
+      ]
+    }
+  ]
+};
+---
+<Location title={svc.metaTitle} description={svc.metaDescription} canonical={canonical} schema={schema}>
+  <!-- HERO -->
+  <section class="bg-ink text-white">
+    <div class="max-w-[1000px] mx-auto px-6 pt-16 pb-14 lg:pt-24 lg:pb-20">
+      <nav class="text-[12px] text-white/45 mb-6 flex items-center gap-2 flex-wrap">
+        <a href="/" class="hover:text-white transition">Home</a><span>/</span>
+        <a href="/services/" class="hover:text-white transition">Services</a><span>/</span>
+        <span class="text-white/70">{svc.name}</span>
+      </nav>
+      <div class="kicker on-dark mb-5">Bibra Lake · Perth · Western Australia</div>
+      <h1 class="h-hero font-display">{svc.h1}</h1>
+      <p class="lead !text-white/80 mt-6 max-w-2xl">{svc.intro}</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/#contact" class="btn btn-light">Request a Quote</a>
+        <a href={phoneTel} class="btn btn-outline-light">Call {home.business.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="max-w-[1000px] mx-auto px-6 py-16 lg:py-20">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+      <div class="lg:col-span-7">
+        <div class="kicker mb-5">What we build</div>
+        <h2 class="h-feat font-display mb-5">{svc.name} in our Bibra Lake workshop.</h2>
+        <p class="lead">{svc.detail}</p>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="card p-7">
+          <ul class="space-y-3">
+            {svc.whatWeDo.map((w) => (
+              <li class="flex gap-3 text-[.98rem]"><span class="accent shrink-0">▸</span><span>{w}</span></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES + PROCUREMENT -->
+  <section class="bg-paper-2 border-y line">
+    <div class="max-w-[1000px] mx-auto px-6 py-14 lg:py-16">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <div class="kicker mb-4">Who we build for</div>
+          <div class="flex flex-wrap gap-2.5">
+            {svc.industries.map((ind) => (
+              <span class="card px-4 py-2.5 text-[.92rem] font-display font-semibold">{ind}</span>
+            ))}
+          </div>
+        </div>
+        <div class="bg-ink text-white rounded-[4px] p-6">
+          <div class="font-display font-bold mb-1.5">Aboriginal-owned · Supply Nation certified</div>
+          <p class="text-white/65 text-[.92rem] leading-relaxed">Working to an Indigenous procurement or RAP target? This scope counts as verified spend with a certified Indigenous business. <a href="/aboriginal-owned-fabrication/" class="accent font-semibold">Learn more →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  {svc.faqs && svc.faqs.length > 0 && (
+    <section class="max-w-[1000px] mx-auto px-6 py-16 lg:py-20">
+      <div class="kicker mb-6">Questions & answers</div>
+      <div class="border-t border-b line">
+        {svc.faqs.map((f) => (
+          <details class="group border-b line last:border-b-0 py-5">
+            <summary class="flex items-center justify-between gap-6 cursor-pointer list-none font-display font-semibold text-[1.05rem]">
+              <span>{f.q}</span>
+              <span class="accent shrink-0 transition-transform duration-200 group-open:rotate-45 text-2xl leading-none">+</span>
+            </summary>
+            <p class="muted mt-3 leading-relaxed text-[.98rem] max-w-2xl">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- RELATED + CTA -->
+  <section class="max-w-[1000px] mx-auto px-6 pb-16 lg:pb-20">
+    {related.length > 0 && (
+      <div class="mb-12">
+        <div class="kicker mb-4">Related services</div>
+        <div class="flex flex-wrap gap-2.5">
+          {related.map((r) => (
+            <a href={`/services/${r.slug}/`} class="card px-4 py-2.5 text-[.95rem] font-display font-semibold hover:accent">{r.name}</a>
+          ))}
+          <a href="/services/" class="card px-4 py-2.5 text-[.95rem] font-display font-semibold hover:accent">All services →</a>
+        </div>
+      </div>
+    )}
+    <div class="bg-ink text-white rounded-[4px] p-9 lg:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div>
+        <h2 class="h-feat font-display mb-2">Need {svc.name.toLowerCase()} in Perth?</h2>
+        <p class="text-white/70 max-w-xl">Send a drawing, sketch or photo and we'll come back with a clear quote — usually within a day or two.</p>
+      </div>
+      <div class="flex flex-wrap gap-3 shrink-0">
+        <a href="/#contact" class="btn btn-light">Request a Quote</a>
+        <a href={phoneTel} class="btn btn-outline-light">Call Now</a>
+      </div>
+    </div>
+  </section>
+</Location>

@@ -1,0 +1,140 @@
+[
+  {
+    "slug": "steel-fabrication",
+    "name": "Steel Fabrication",
+    "metaTitle": "Steel Fabrication Perth | Custom & Structural Steel — Offer Fabrications",
+    "metaDescription": "Custom and structural steel fabrication in Perth WA. Frames, platforms, brackets, walkways and heavy steelwork, MIG & TIG welded in our Bibra Lake workshop and delivered across WA.",
+    "h1": "Steel Fabrication in Perth",
+    "intro": "Offer Fabrications is an Aboriginal-owned, Supply Nation certified steel fabrication workshop in Bibra Lake, Perth. We fabricate custom and structural steel — from light brackets and frames through to heavy platforms and walkways — cut, formed, welded and finished in-house, then delivered across Western Australia.",
+    "whatWeDo": [
+      "Custom mild and structural steel fabrication",
+      "Frames, brackets, platforms and sub-assemblies",
+      "Walkways, handrails, guards and access steel",
+      "Chutes, hoppers, skid frames and heavy fabrication",
+      "MIG and TIG welded to specification",
+      "One-off custom jobs through to production runs"
+    ],
+    "detail": "We work across mild and structural steel from light gauge through to heavy sections, matching the right material and weld process to each job. Everything is fabricated in our Bibra Lake workshop and delivered or freighted to your site — we don't do on-site installation, which is how we keep quality and turnaround high.",
+    "faqs": [
+      { "q": "Do you do structural steel fabrication in Perth?", "a": "Yes. We fabricate custom and structural steel — frames, platforms, walkways, brackets and heavy steelwork — in our Bibra Lake workshop and deliver across Perth and WA." },
+      { "q": "Can you handle both one-off steel jobs and production runs?", "a": "Yes. We take on single custom parts and prototypes right through to low and medium volume production runs, with the same quality on every job." }
+    ],
+    "industries": ["Mining & Resources", "Construction", "Oil & Gas", "Commercial & Trade"],
+    "related": ["stainless-steel-fabrication", "welding", "cnc-cutting-folding"]
+  },
+  {
+    "slug": "stainless-steel-fabrication",
+    "name": "Stainless Steel Fabrication",
+    "metaTitle": "Stainless Steel Fabrication Perth | Benches, Tanks & More — Offer Fabrications",
+    "metaDescription": "Food-grade and marine-grade stainless steel fabrication in Perth WA. Benches, cabinets, tanks, hoppers, pipework and handrails, built in our Bibra Lake workshop and delivered across WA.",
+    "h1": "Stainless Steel Fabrication in Perth",
+    "intro": "Offer Fabrications builds food-grade, marine and architectural stainless steel fabrication from our Bibra Lake workshop in Perth. Benches, cabinets, tanks, hoppers, pipework and corrosion-resistant assemblies — TIG welded for a clean, durable finish and delivered across Western Australia.",
+    "whatWeDo": [
+      "Food-grade stainless benches, tables and shelving",
+      "Cabinets, enclosures and switchboard housings",
+      "Tanks, hoppers and pipework",
+      "Handrails, balustrades and architectural stainless",
+      "Marine-grade stainless components",
+      "TIG welded and finished for corrosion resistance"
+    ],
+    "detail": "Stainless is where a clean weld and the right grade matter most. We fabricate in food-grade and marine-grade stainless to suit hygiene, coastal and architectural requirements, TIG welding for strength and finish. Built in Bibra Lake and delivered to your site across WA.",
+    "faqs": [
+      { "q": "Do you make food-grade stainless steel benches in Perth?", "a": "Yes. We fabricate food-grade stainless benches, tables, shelving and fittings for commercial kitchens and food businesses, made to measure in our Bibra Lake workshop." },
+      { "q": "Can you fabricate marine-grade stainless?", "a": "Yes. We work in marine-grade stainless for coastal and marine applications, TIG welded and finished for corrosion resistance." }
+    ],
+    "industries": ["Marine", "Commercial & Trade", "Food & Hospitality", "Construction"],
+    "related": ["steel-fabrication", "aluminium-fabrication", "welding"]
+  },
+  {
+    "slug": "aluminium-fabrication",
+    "name": "Aluminium Fabrication",
+    "metaTitle": "Aluminium Fabrication Perth | Custom & Marine Grade — Offer Fabrications",
+    "metaDescription": "Aluminium fabrication and welding in Perth WA. Canopies, enclosures, panels, frames and marine-grade aluminium, built in our Bibra Lake workshop and delivered across WA.",
+    "h1": "Aluminium Fabrication in Perth",
+    "intro": "Offer Fabrications delivers lightweight, corrosion-resistant aluminium fabrication from our Bibra Lake workshop in Perth. Canopies, enclosures, panels, frames and specialised industrial and marine components — TIG welded and finished in-house, then delivered across Western Australia.",
+    "whatWeDo": [
+      "Custom aluminium fabrication and welding",
+      "Canopies, enclosures and panels",
+      "Marine-grade aluminium components",
+      "Frames, brackets and specialised assemblies",
+      "Lightweight, corrosion-resistant builds",
+      "One-off jobs through to production runs"
+    ],
+    "detail": "Aluminium takes a careful hand to weld well, especially in marine grades. We TIG weld aluminium for clean, strong joins on canopies, enclosures, marine components and custom parts, fabricated in Bibra Lake and delivered to your site.",
+    "faqs": [
+      { "q": "Do you do aluminium welding in Perth?", "a": "Yes. We TIG weld aluminium in-house for canopies, enclosures, marine components and custom fabrication, built in our Bibra Lake workshop." },
+      { "q": "Can you fabricate marine-grade aluminium?", "a": "Yes. We work in marine-grade aluminium for coastal and marine applications, welded and finished for durability." }
+    ],
+    "industries": ["Marine", "Commercial & Trade", "Industrial", "Construction"],
+    "related": ["stainless-steel-fabrication", "welding", "steel-fabrication"]
+  },
+  {
+    "slug": "welding",
+    "name": "MIG & TIG Welding",
+    "metaTitle": "MIG & TIG Welding Perth | Steel, Stainless & Aluminium — Offer Fabrications",
+    "metaDescription": "MIG and TIG welding services in Perth WA across steel, stainless steel and aluminium. High-quality, clean welds on custom and production work, in our Bibra Lake workshop.",
+    "h1": "MIG & TIG Welding in Perth",
+    "intro": "Offer Fabrications provides high-quality MIG and TIG welding across steel, stainless steel and aluminium from our Bibra Lake workshop in Perth. Built for strength, durability and a clean finish on both one-off and production work, welded in-house and delivered across Western Australia.",
+    "whatWeDo": [
+      "MIG welding for steel and production work",
+      "TIG welding for stainless, aluminium and fine detail",
+      "Steel, stainless steel and aluminium welding",
+      "Custom fabrication and welded assemblies",
+      "Clean, strong welds built to last",
+      "One-off jobs through to production runs"
+    ],
+    "detail": "MIG welding is faster and well suited to thicker steel and production work, while TIG welding gives a cleaner, more precise weld ideal for stainless steel, aluminium and finer work. We run both in-house and choose the right process for each job. Note we're a workshop-based fabricator — we don't offer mobile or on-site welding.",
+    "faqs": [
+      { "q": "What's the difference between MIG and TIG welding?", "a": "MIG is faster and suits thicker steel and production work; TIG gives a cleaner, more precise weld ideal for stainless steel, aluminium and finer detail. We do both in-house and pick the right one for the job." },
+      { "q": "Do you offer mobile or on-site welding?", "a": "No — we're a workshop-based fabricator. We weld and fabricate in our Bibra Lake workshop and deliver or arrange transport across Perth and WA." }
+    ],
+    "industries": ["Mining & Resources", "Marine", "Commercial & Trade", "Industrial"],
+    "related": ["steel-fabrication", "stainless-steel-fabrication", "aluminium-fabrication"]
+  },
+  {
+    "slug": "cnc-cutting-folding",
+    "name": "CNC Cutting & Folding",
+    "metaTitle": "CNC Folding & Sheet Metal Fabrication Perth — Offer Fabrications",
+    "metaDescription": "CNC cutting, folding and sheet metal fabrication in Perth WA. Precise, repeatable metal cutting, bending and forming in our Bibra Lake workshop, delivered across WA.",
+    "h1": "CNC Cutting & Folding in Perth",
+    "intro": "Offer Fabrications provides precision sheet metal cutting, folding and forming from our Bibra Lake workshop in Perth. Accurate, repeatable CNC folding and metal bending ready for fabrication or assembly, produced in-house and delivered across Western Australia.",
+    "whatWeDo": [
+      "CNC folding and metal bending",
+      "Precision sheet metal fabrication",
+      "Cutting, forming and forming to spec",
+      "Accurate, repeatable components",
+      "Parts ready for fabrication or assembly",
+      "One-off jobs through to production runs"
+    ],
+    "detail": "Clean, accurate folds and cuts are the foundation of good fabrication. We process sheet metal with precision cutting and CNC folding to produce repeatable, ready-to-assemble components, then fabricate or hand them straight into your build. All done in Bibra Lake and delivered to your site.",
+    "faqs": [
+      { "q": "Do you do CNC folding and metal bending in Perth?", "a": "Yes. We fold and form sheet metal with precision CNC folding for accurate, repeatable parts, produced in our Bibra Lake workshop." },
+      { "q": "Can you cut and fold sheet metal to my drawings?", "a": "Yes. Send through your drawings or a sketch and we'll cut, fold and form your sheet metal to spec, ready for fabrication or assembly." }
+    ],
+    "industries": ["Manufacturing", "Construction", "Commercial & Trade", "Industrial"],
+    "related": ["steel-fabrication", "production-manufacturing", "welding"]
+  },
+  {
+    "slug": "production-manufacturing",
+    "name": "Production Manufacturing",
+    "metaTitle": "Production Manufacturing Perth | Low & Medium Volume Runs — Offer Fabrications",
+    "metaDescription": "Low-to-medium volume production manufacturing in Perth WA. Repeatable metal fabrication runs with consistent quality, built in our Bibra Lake workshop and delivered across WA.",
+    "h1": "Production Manufacturing in Perth",
+    "intro": "Offer Fabrications runs low-to-medium volume production manufacturing from our Bibra Lake workshop in Perth. Repeatable metal fabrication with consistent quality, efficient workflows and reliable turnaround — from the same shop that builds your one-off prototypes.",
+    "whatWeDo": [
+      "Low-to-medium volume production runs",
+      "Repeatable, consistent fabrication",
+      "Prototype through to production",
+      "Batch and contract metal manufacturing",
+      "Steel, stainless and aluminium components",
+      "Efficient, reliable turnaround"
+    ],
+    "detail": "When you need the same part made well, again and again, we set up repeatable processes for consistent quality across the run. We can take a design from prototype through to production in the one workshop, keeping quality and lead times under control. Built in Bibra Lake and delivered across WA.",
+    "faqs": [
+      { "q": "Do you do production runs, not just one-off jobs?", "a": "Yes. We handle low-to-medium volume production manufacturing with repeatable processes and consistent quality, alongside our one-off custom fabrication." },
+      { "q": "Can you take a part from prototype to production?", "a": "Yes. We can prototype a part and then move it into a production run in the same workshop, keeping quality and turnaround consistent." }
+    ],
+    "industries": ["Manufacturing", "Industrial", "Commercial & Trade", "Mining & Resources"],
+    "related": ["cnc-cutting-folding", "steel-fabrication", "welding"]
+  }
+]

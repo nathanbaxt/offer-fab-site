@@ -1,4 +1,5 @@
 import locations from "../../content/locations.json";
+import services from "../../content/services.json";
 
 const SITE = "https://offerfabrications.com.au";
 
@@ -7,6 +8,8 @@ export async function GET() {
   const entries = [
     { loc: `${SITE}/`, priority: "1.0" },
     { loc: `${SITE}/aboriginal-owned-fabrication/`, priority: "0.9" },
+    { loc: `${SITE}/services/`, priority: "0.9" },
+    ...services.map((s) => ({ loc: `${SITE}/services/${s.slug}/`, priority: "0.8" })),
     { loc: `${SITE}/locations/`, priority: "0.8" },
     ...locations.map((l) => ({ loc: `${SITE}/locations/${l.slug}/`, priority: "0.7" })),
   ];
