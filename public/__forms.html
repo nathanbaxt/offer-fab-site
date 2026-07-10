@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head><meta charset="UTF-8" /><title>Netlify form detection</title></head>
+<body>
+<!-- Static form so Netlify's build-time crawler reliably registers the "quote" form.
+     The real, styled form lives on the homepage and submits to this same form-name. -->
+<form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="quote" />
+  <input type="text" name="bot-field" />
+  <input type="text" name="name" />
+  <input type="tel" name="phone" />
+  <input type="email" name="email" />
+  <select name="service">
+    <option>Custom steel fabrication</option>
+    <option>Aluminium fabrication</option>
+    <option>Stainless steel fabrication</option>
+    <option>Welding / repair</option>
+    <option>Something else</option>
+  </select>
+  <textarea name="message"></textarea>
+</form>
+</body>
+</html>
