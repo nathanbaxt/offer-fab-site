@@ -1,0 +1,114 @@
+---
+import Location from "../layouts/Location.astro";
+import homeData from "../../content/home.json";
+const home = homeData;
+const SITE = "https://offerfabrications.com.au";
+const canonical = SITE + "/aboriginal-owned-fabrication/";
+const phoneTel = "tel:" + home.business.phoneHref;
+
+const title = "Aboriginal-Owned Metal Fabrication Perth | Supply Nation Certified — Offer Fabrications";
+const description = "Offer Fabrications is an Aboriginal-owned, Supply Nation certified metal fabrication business in Perth WA. Verified Indigenous procurement for mining, oil & gas, government and construction — steel, stainless and aluminium fabrication.";
+
+const points = [
+  { title: "Aboriginal-owned & operated", body: "A genuinely Aboriginal-owned metal fabrication business, based in Bibra Lake and servicing all of Western Australia." },
+  { title: "Certified Supply Nation supplier", body: "Listed and verified in Supply Nation's Indigenous business directory — the register procurement teams check first." },
+  { title: "Meets Indigenous procurement targets", body: "Engaging us counts as verified spend toward Indigenous Procurement Policy obligations, mining and resources Indigenous participation commitments, and corporate Reconciliation Action Plans." },
+  { title: "Capability that stacks up", body: "Custom steel, stainless and aluminium fabrication, MIG & TIG welding, CNC cutting & folding and production runs — no compromise to hit a target." },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": SITE + "/#business",
+      "name": "Offer Fabrications",
+      "description": description,
+      "url": SITE + "/",
+      "telephone": home.business.phone,
+      "email": home.business.email,
+      "image": SITE + "/assets/img/hero-ute-generator.jpg",
+      "slogan": "Aboriginal-owned, Supply Nation certified metal fabrication in Perth WA.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit 14/16 Salpietro Street",
+        "addressLocality": "Bibra Lake",
+        "addressRegion": "WA",
+        "postalCode": "6163",
+        "addressCountry": "AU"
+      },
+      "areaServed": { "@type": "State", "name": "Western Australia" },
+      "memberOf": { "@type": "Organization", "name": "Supply Nation", "url": "https://supplynation.org.au/" },
+      "knowsAbout": ["Aboriginal-owned business", "Indigenous procurement", "Supply Nation certified supplier", "Steel fabrication", "Stainless steel fabrication", "Aluminium fabrication"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is Offer Fabrications Aboriginal-owned?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Offer Fabrications is a proudly Aboriginal-owned metal fabrication business based in Bibra Lake, Perth WA." } },
+        { "@type": "Question", "name": "Is Offer Fabrications a Supply Nation supplier?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Offer Fabrications is a certified Supply Nation supplier, listed in the Indigenous business directory used by government and corporate procurement teams." } },
+        { "@type": "Question", "name": "Does using Offer Fabrications count toward Indigenous procurement targets?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. As a certified Indigenous business, spend with Offer Fabrications is verified Indigenous procurement that can count toward Indigenous Procurement Policy obligations, mining and resources participation commitments and Reconciliation Action Plan targets." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/" },
+        { "@type": "ListItem", "position": 2, "name": "Aboriginal-Owned Fabrication", "item": canonical }
+      ]
+    }
+  ]
+};
+---
+<Location title={title} description={description} canonical={canonical} schema={schema}>
+  <section class="bg-ink text-white">
+    <div class="max-w-[1000px] mx-auto px-6 pt-16 pb-14 lg:pt-24 lg:pb-20">
+      <nav class="text-[12px] text-white/45 mb-6 flex items-center gap-2 flex-wrap">
+        <a href="/" class="hover:text-white transition">Home</a><span>/</span>
+        <span class="text-white/70">Aboriginal-Owned Fabrication</span>
+      </nav>
+      <div class="inline-flex items-center gap-2.5 text-[12px] font-semibold tracking-wide uppercase text-white/90 border border-white/25 rounded-full pl-3 pr-4 py-2 mb-6">
+        <span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent)"></span>
+        Aboriginal-owned · Supply Nation Certified
+      </div>
+      <h1 class="h-hero font-display">Aboriginal-owned metal fabrication in Perth</h1>
+      <p class="lead !text-white/80 mt-6 max-w-2xl">Offer Fabrications is a proudly Aboriginal-owned metal fabrication business and a certified Supply Nation supplier, based in Bibra Lake and servicing all of Western Australia. We give mining, resources, oil and gas, government and construction clients a way to hit Indigenous procurement targets with a fabricator whose work genuinely stacks up.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/#contact" class="btn btn-light">Request a Quote</a>
+        <a href={phoneTel} class="btn btn-outline-light">Call {home.business.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-[1000px] mx-auto px-6 py-16 lg:py-20">
+    <div class="kicker mb-5">Why it matters</div>
+    <h2 class="h-feat font-display mb-5">Verified Indigenous procurement, real fabrication capability.</h2>
+    <p class="lead mb-4">Across Australia, government buyers work to the Indigenous Procurement Policy, resources companies and head contractors carry Indigenous participation and spend commitments, and corporates report against Reconciliation Action Plans. Meeting those targets means directing real spend to certified Indigenous businesses.</p>
+    <p class="muted text-[.98rem] leading-relaxed max-w-2xl">Offer Fabrications lets you do exactly that on your fabrication and welding scopes — a certified Aboriginal-owned supplier that delivers custom steel, stainless and aluminium work to the same standard you would expect from any established Perth workshop. Verified Indigenous engagement, with none of the trade-off.</p>
+  </section>
+
+  <section class="bg-paper-2 border-y line">
+    <div class="max-w-[1000px] mx-auto px-6 py-16 lg:py-20">
+      <div class="grid sm:grid-cols-2 gap-4">
+        {points.map((p) => (
+          <div class="card p-7">
+            <h3 class="font-display font-bold text-lg mb-2">{p.title}</h3>
+            <p class="muted text-[.95rem] leading-relaxed">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-[1000px] mx-auto px-6 py-16 lg:py-20">
+    <div class="bg-ink text-white rounded-[4px] p-9 lg:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div>
+        <h2 class="h-feat font-display mb-2">Working to an Indigenous procurement target?</h2>
+        <p class="text-white/70 max-w-xl">Send us your fabrication scope and we'll come back with a clear quote — and the certification details your procurement team needs.</p>
+      </div>
+      <div class="flex flex-wrap gap-3 shrink-0">
+        <a href="/#contact" class="btn btn-light">Request a Quote</a>
+        <a href={phoneTel} class="btn btn-outline-light">Call Now</a>
+      </div>
+    </div>
+  </section>
+</Location>

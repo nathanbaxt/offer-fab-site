@@ -30,7 +30,8 @@ const schemaGraph = {
       "@type": "LocalBusiness",
       "@id": SITE + "/#business",
       "name": "Offer Fabrications",
-      "description": "Metal fabrication workshop in Bibra Lake, Perth WA. Custom steel, stainless steel and aluminium fabrication, MIG & TIG welding, CNC cutting and folding, and production manufacturing for mining, industrial, commercial and trade clients across Western Australia.",
+      "description": "Aboriginal-owned metal fabrication workshop in Bibra Lake, Perth WA and certified Supply Nation supplier. Custom steel, stainless steel and aluminium fabrication, MIG & TIG welding, CNC cutting and folding, and production manufacturing for mining, industrial, commercial and trade clients across Western Australia.",
+      "slogan": "Aboriginal-owned, Supply Nation certified metal fabrication in Perth WA.",
       "url": SITE + "/",
       "telephone": home.business.phone,
       "email": home.business.email,
@@ -59,7 +60,8 @@ const schemaGraph = {
         "closes": "16:00"
       },
       "sameAs": [home.business.instagramUrl],
-      "knowsAbout": ["Steel fabrication", "Stainless steel fabrication", "Aluminium fabrication", "MIG welding", "TIG welding", "CNC cutting and folding", "Production manufacturing", "Sheet metal fabrication"],
+      "knowsAbout": ["Steel fabrication", "Stainless steel fabrication", "Aluminium fabrication", "MIG welding", "TIG welding", "CNC cutting and folding", "Production manufacturing", "Sheet metal fabrication", "Aboriginal-owned business", "Indigenous procurement", "Supply Nation certified supplier"],
+      "memberOf": { "@type": "Organization", "name": "Supply Nation", "url": "https://supplynation.org.au/" },
       "makesOffer": home.capabilities.items.map((c) => ({
         "@type": "Offer",
         "itemOffered": { "@type": "Service", "name": c.title, "description": c.body, "areaServed": "Western Australia", "provider": { "@id": SITE + "/#business" } }
@@ -90,8 +92,8 @@ const schemaGraph = {
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Custom Metal Fabrication Perth | Steel, Stainless & Aluminium — Offer Fabrications, Bibra Lake WA</title>
-<meta name="description" content="Offer Fabrications is a Bibra Lake metal fabrication workshop in Perth WA — custom steel, stainless steel and aluminium fabrication, MIG & TIG welding and CNC cutting & folding for mining, industrial, commercial and trade. One-off jobs and production runs, delivered across Western Australia." />
+<title>Metal Fabrication Perth | Aboriginal-Owned — Offer Fabrications, Bibra Lake WA</title>
+<meta name="description" content="Aboriginal-owned, Supply Nation certified metal fabrication in Bibra Lake, Perth WA. Custom steel, stainless steel and aluminium fabrication, MIG & TIG welding and CNC cutting & folding for mining, industrial, commercial and trade. One-off jobs and production runs, delivered across Western Australia." />
 <meta property="og:title" content="Offer Fabrications — Custom Metal Fabrication, Perth WA" />
 <meta property="og:description" content="Custom steel, stainless and aluminium fabrication for mining, industrial, commercial and trade — built in Bibra Lake, delivered across WA." />
 <meta property="og:image" content="https://offerfabrications.com.au/assets/img/hero-ute-generator.jpg" />
@@ -109,7 +111,7 @@ const schemaGraph = {
 <meta name="geo.position" content="-32.1016;115.8205" />
 <meta name="ICBM" content="-32.1016, 115.8205" />
 <meta name="author" content="Offer Fabrications" />
-<meta name="keywords" content="metal fabrication Perth, steel fabrication Perth, stainless steel fabrication, aluminium fabrication, MIG TIG welding, CNC cutting and folding, custom fabrication Bibra Lake, mining fabrication WA" />
+<meta name="keywords" content="metal fabrication Perth, steel fabrication Perth, stainless steel fabrication, aluminium fabrication, MIG TIG welding, CNC cutting and folding, custom fabrication Bibra Lake, mining fabrication WA, Aboriginal owned fabrication company, Indigenous owned fabrication, Supply Nation fabrication, Indigenous procurement supplier" />
 <link rel="canonical" href="https://offerfabrications.com.au/" />
 <link rel="icon" type="image/png" href="/assets/logo/offer-logo.png" />
 <script type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
@@ -196,6 +198,8 @@ const schemaGraph = {
       <span>{home.business.address}</span>
       <span class="text-white/30">|</span>
       <span>{home.business.hours}</span>
+      <span class="text-white/30">|</span>
+      <span class="text-white">Aboriginal-owned · Supply Nation Certified</span>
     </div>
     <div class="flex items-center gap-6">
       <a href={home.business.instagramUrl} target="_blank" rel="noopener" class="hover:text-white transition">{home.business.instagram}</a>
@@ -261,6 +265,10 @@ const schemaGraph = {
           <a href="#contact" class="btn btn-light">{home.hero.ctaPrimary}</a>
           <a href="#work" class="btn btn-outline-light">{home.hero.ctaSecondary}</a>
         </div>
+        <a href="/aboriginal-owned-fabrication/" class="mt-7 inline-flex items-center gap-2.5 text-[12.5px] font-semibold tracking-wide uppercase text-white/90 border border-white/25 rounded-full pl-3 pr-4 py-2 hover:border-white/60 transition">
+          <span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent)"></span>
+          Proudly Aboriginal-owned · Supply Nation Certified
+        </a>
       </div>
     </div>
   </div>
@@ -327,6 +335,26 @@ const schemaGraph = {
           <li class="flex gap-4"><span class="accent font-display font-bold">{String(i + 1).padStart(2, '0')}</span><span class="text-[.98rem]"><span class="font-semibold">{p.strong}</span> <span class="muted">{p.rest}</span></span></li>
         ))}
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABORIGINAL-OWNED -->
+<section id="aboriginal-owned" class="bg-ink text-white">
+  <div class="max-w-[1280px] mx-auto px-6 py-20 lg:py-24">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div class="reveal">
+        <div class="kicker on-dark mb-5">Aboriginal-owned · Supply Nation Certified</div>
+        <h2 class="h-feat font-display mb-6">A proudly Aboriginal-owned fabrication business.</h2>
+        <p class="lead !text-white/75 mb-6">Offer Fabrications is an Aboriginal-owned metal fabrication business and a certified Supply Nation supplier. For mining, resources, oil and gas, government and construction clients, that means your fabrication spend is verified engagement with a certified Indigenous business — with no compromise on capability, quality or turnaround.</p>
+        <a href="/aboriginal-owned-fabrication/" class="link-arrow !text-white">Aboriginal-owned &amp; Indigenous procurement <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="reveal grid sm:grid-cols-2 gap-4">
+        <div class="border border-white/12 rounded-[4px] p-6"><div class="font-display font-bold text-lg mb-1.5 accent">Aboriginal-owned</div><p class="text-white/60 text-[.92rem] leading-relaxed">A genuinely Aboriginal-owned and operated Perth fabrication business.</p></div>
+        <div class="border border-white/12 rounded-[4px] p-6"><div class="font-display font-bold text-lg mb-1.5 accent">Supply Nation certified</div><p class="text-white/60 text-[.92rem] leading-relaxed">A verified, certified supplier in the Supply Nation Indigenous business directory.</p></div>
+        <div class="border border-white/12 rounded-[4px] p-6"><div class="font-display font-bold text-lg mb-1.5 accent">Counts toward your targets</div><p class="text-white/60 text-[.92rem] leading-relaxed">Real spend against Indigenous procurement policies and Reconciliation Action Plans.</p></div>
+        <div class="border border-white/12 rounded-[4px] p-6"><div class="font-display font-bold text-lg mb-1.5 accent">No compromise</div><p class="text-white/60 text-[.92rem] leading-relaxed">Backed by genuine steel, stainless and aluminium fabrication capability.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -515,6 +543,7 @@ const schemaGraph = {
         <li><a href="#work" class="hover:text-white transition">Our Work</a></li>
         <li><a href="#industries" class="hover:text-white transition">Industries</a></li>
         <li><a href="/locations/" class="hover:text-white transition">Areas We Serve</a></li>
+        <li><a href="/aboriginal-owned-fabrication/" class="hover:text-white transition">Aboriginal-Owned</a></li>
         <li><a href="#about" class="hover:text-white transition">About</a></li>
         <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
         <li><a href="#contact" class="hover:text-white transition">Get a Quote</a></li>

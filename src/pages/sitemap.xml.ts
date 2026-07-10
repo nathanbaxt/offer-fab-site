@@ -6,6 +6,7 @@ export async function GET() {
   const today = new Date().toISOString().slice(0, 10);
   const entries = [
     { loc: `${SITE}/`, priority: "1.0" },
+    { loc: `${SITE}/aboriginal-owned-fabrication/`, priority: "0.9" },
     { loc: `${SITE}/locations/`, priority: "0.8" },
     ...locations.map((l) => ({ loc: `${SITE}/locations/${l.slug}/`, priority: "0.7" })),
   ];
