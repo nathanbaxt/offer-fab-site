@@ -1,4 +1,5 @@
 ---
+import GoogleAds from "../components/GoogleAds.astro";
 import homeData from "../../content/home.json";
 const home = homeData;
 const phoneTel = "tel:" + home.business.phoneHref;
@@ -29,6 +30,18 @@ const phoneTel = "tel:" + home.business.phoneHref;
   .btn-primary { background:var(--ink); color:#fff; } .btn-primary:hover { background:var(--accent); }
   .btn-ghost { background:transparent; color:var(--ink); border:1px solid var(--line); } .btn-ghost:hover { border-color:var(--ink); }
 </style>
+<GoogleAds />
+<!-- Google Ads: "Request quote" conversion. This page only loads after a form submit. -->
+<script is:inline>
+  window.addEventListener('load', function () {
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'conversion', {
+      send_to: 'AW-18313049898/kB06CIb5h84cEKruq5xE',
+      value: 1.0,
+      currency: 'AUD'
+    });
+  });
+</script>
 </head>
 <body>
   <main class="card">
