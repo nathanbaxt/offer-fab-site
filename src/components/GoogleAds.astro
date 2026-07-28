@@ -1,0 +1,23 @@
+---
+// Google Ads global site tag (gtag.js) — Offer Fabrications, AW-18313049898.
+// Without this tag none of the account's conversion actions can ever fire, so
+// Google Ads has no idea which clicks turn into enquiries.
+//
+// Conversion actions wired up:
+//   Request quote      AW-18313049898/kB06CIb5h84cEKruq5xE  -> fired on /success/
+//   Website call click AW-18313049898/2vgLCMf6-NYcEKruq5xE  -> fired on any tel: link
+---
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18313049898"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'AW-18313049898');
+
+  // Tapping a phone number anywhere on the site counts as a call lead.
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+    if (!a) return;
+    gtag('event', 'conversion', { send_to: 'AW-18313049898/2vgLCMf6-NYcEKruq5xE' });
+  });
+</script>
