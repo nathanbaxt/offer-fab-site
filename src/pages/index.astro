@@ -176,7 +176,19 @@ const schemaGraph = {
      lower band only — text stays crisp over the ute instead of fighting it */
   .hero-scrim { background: linear-gradient(180deg, rgba(15,16,20,.45) 0%, rgba(15,16,20,.15) 38%, rgba(15,16,20,.55) 78%, rgba(15,16,20,.86) 100%); }
   @media (max-width:639px){
-    .hero-scrim { background: linear-gradient(180deg, rgba(15,16,20,.42) 0%, rgba(15,16,20,.14) 26%, rgba(15,16,20,.62) 58%, rgba(15,16,20,.88) 82%, rgba(15,16,20,.94) 100%); }
+    /* The photo is taller than the phone frame, so object-position has no slack to work with.
+       Scale from the bottom edge instead: the ute and generator enclosure ride up above the
+       headline, and the copy below lands on open ground that fades out to black. */
+    .hero-img { transform: scale(1.6); transform-origin: center bottom; }
+    .hero-scrim {
+      background: linear-gradient(180deg,
+        rgba(12,13,16,.50) 0%,
+        rgba(12,13,16,.10) 18%,
+        rgba(12,13,16,.30) 40%,
+        rgba(12,13,16,.86) 58%,
+        rgba(12,13,16,.97) 72%,
+        #0c0d10 88%);
+    }
   }
   .zoom { overflow:hidden; } .zoom img { transition: transform .7s cubic-bezier(.2,.7,.2,1); } .zoom:hover img { transform: scale(1.06); }
   .ring-frame { position:relative; } .ring-frame::after { content:""; position:absolute; left:16px; top:16px; right:-16px; bottom:-16px; border:1px solid var(--line); border-radius:3px; z-index:-1; }
@@ -309,7 +321,7 @@ const schemaGraph = {
 
 <!-- HERO -->
 <section id="top" class="relative">
-  <div class="relative min-h-[88svh] sm:min-h-[86vh] lg:min-h-[88vh] flex items-end">
+  <div class="relative min-h-[88svh] sm:min-h-[86vh] lg:min-h-[88vh] flex items-end overflow-hidden bg-[#0c0d10]">
     <img src={home.hero.image} alt="Offer Fabrications branded HiLux beside a custom-built generator enclosure" class="absolute inset-0 imgcover hero-img" />
     <div class="absolute inset-0 hero-scrim"></div>
     <div class="relative z-10 w-full max-w-[1280px] mx-auto px-5 sm:px-6 pb-11 sm:pb-16 lg:pb-24 text-white">
@@ -381,11 +393,12 @@ const schemaGraph = {
 
 <!-- FEATURE 1 -->
 <section id="about" class="max-w-[1280px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-28">
-  <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-    <div class="reveal ring-frame zoom rounded-[3px]">
+  <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
+    <!-- text first on mobile so the #about jump lands on the heading, not a full-bleed photo -->
+    <div class="reveal order-2 lg:order-1 ring-frame zoom rounded-[3px]">
       <img src={home.feature1.image} alt="Custom steel valve enclosure with pipework, fabricated by Offer Fabrications in Bibra Lake WA" loading="lazy" decoding="async" class="w-full aspect-[4/3] sm:aspect-[4/3] lg:aspect-[4/5] object-cover rounded-[3px]" />
     </div>
-    <div class="reveal">
+    <div class="reveal order-1 lg:order-2">
       <div class="kicker mb-5">{home.feature1.kicker}</div>
       <h2 class="h-feat font-display mb-6">{home.feature1.heading}</h2>
       <p class="lead mb-8">{home.feature1.body}</p>
