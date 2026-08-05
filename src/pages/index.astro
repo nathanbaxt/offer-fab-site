@@ -100,7 +100,8 @@ const schemaGraph = {
 <html lang="en-AU">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#ffffff" />
 <title>Metal Fabrication Perth | Aboriginal-Owned — Offer Fabrications, Bibra Lake WA</title>
 <meta name="description" content="Aboriginal-owned, Supply Nation certified metal fabrication in Bibra Lake, Perth WA. Custom steel, stainless steel and aluminium fabrication, MIG & TIG welding and CNC cutting & folding for mining, industrial, commercial and trade. One-off jobs and production runs, delivered across Western Australia." />
 <meta property="og:title" content="Offer Fabrications — Custom Metal Fabrication, Perth WA" />
@@ -171,6 +172,12 @@ const schemaGraph = {
   /* hero: mobile crop (default centre) is fine per client; on desktop the frame is
      shorter/wider, so push the crop down to keep the ute + OFFER FABRICATIONS signage in view */
   @media (min-width:1024px){ .hero-img { object-position: center 72%; } }
+  /* keep the airy top gradient; on a phone the copy block is taller, so deepen the
+     lower band only — text stays crisp over the ute instead of fighting it */
+  .hero-scrim { background: linear-gradient(180deg, rgba(15,16,20,.45) 0%, rgba(15,16,20,.15) 38%, rgba(15,16,20,.55) 78%, rgba(15,16,20,.86) 100%); }
+  @media (max-width:639px){
+    .hero-scrim { background: linear-gradient(180deg, rgba(15,16,20,.42) 0%, rgba(15,16,20,.14) 26%, rgba(15,16,20,.62) 58%, rgba(15,16,20,.88) 82%, rgba(15,16,20,.94) 100%); }
+  }
   .zoom { overflow:hidden; } .zoom img { transition: transform .7s cubic-bezier(.2,.7,.2,1); } .zoom:hover img { transform: scale(1.06); }
   .ring-frame { position:relative; } .ring-frame::after { content:""; position:absolute; left:16px; top:16px; right:-16px; bottom:-16px; border:1px solid var(--line); border-radius:3px; z-index:-1; }
   .nav { transition: background .3s ease, box-shadow .3s ease, border-color .3s ease; }
@@ -194,10 +201,44 @@ const schemaGraph = {
   summary::marker { content:""; }
   #mobileMenu { transition: opacity .3s ease, visibility .3s ease; }
   #mobileMenu.hidden-menu { opacity:0; visibility:hidden; pointer-events:none; }
-  #mobileBar { box-shadow: 0 -10px 30px -12px rgba(0,0,0,.25); }
+  #mobileBar {
+    box-shadow: 0 -10px 30px -12px rgba(0,0,0,.25);
+    background: rgba(255,255,255,.94); backdrop-filter: blur(14px);
+    padding-bottom: calc(.625rem + env(safe-area-inset-bottom));
+    transform: translateY(130%); transition: transform .34s cubic-bezier(.2,.7,.2,1);
+  }
+  #mobileBar.show { transform: none; }
   @media (min-width:1024px){ #mobileBar { display:none; } }
-  @media (max-width:1023px){ body { padding-bottom: 4.25rem; } }
+  @media (max-width:1023px){ body { padding-bottom: calc(4.25rem + env(safe-area-inset-bottom)); } }
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+
+  /* ============ MOBILE-NATIVE PASS ============ */
+  html { -webkit-text-size-adjust: 100%; }
+  * { -webkit-tap-highlight-color: rgba(224,83,30,.13); }
+  a, button, summary, label, select { touch-action: manipulation; }
+  /* 16px minimum stops iOS Safari zooming the page on field focus */
+  input, select, textarea { font-size: 16px; }
+  .tap { min-height: 44px; display: flex; align-items: center; }
+
+  @media (max-width: 639px) {
+    .h-hero { font-size: clamp(2.25rem, 11vw, 3.1rem); line-height: .95; letter-spacing: -.032em; }
+    .h-sec  { font-size: clamp(1.8rem, 8.2vw, 2.35rem); line-height: 1.03; letter-spacing: -.028em; }
+    .h-feat { font-size: clamp(1.6rem, 7.4vw, 2.1rem); line-height: 1.07; letter-spacing: -.028em; }
+    .lead   { font-size: 1rem; line-height: 1.62; }
+    .kicker { font-size: .655rem; letter-spacing: .15em; }
+    .kicker::before { width: 18px; }
+    .btn { padding: .95rem 1.15rem; font-size: .92rem; }
+    section[id] { scroll-margin-top: 62px; }
+    .ring-frame::after { display: none; }
+    /* horizontal snap rail — the native way to browse a gallery on a phone */
+    .rail { display: flex; gap: .7rem; overflow-x: auto; scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; scrollbar-width: none;
+            padding-inline: 1.25rem; margin-inline: -1.25rem; scroll-padding-left: 1.25rem; }
+    .rail::-webkit-scrollbar { display: none; }
+    .rail > * { flex: 0 0 76%; scroll-snap-align: start; }
+    #mobileMenu nav { padding-bottom: env(safe-area-inset-bottom); }
+    #mobileMenu > div:last-child { padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
+  }
 </style>
 <GoogleAds />
 </head>
@@ -221,9 +262,9 @@ const schemaGraph = {
 
 <!-- NAV -->
 <header id="nav" class="nav nav-solid sticky top-0 z-40">
-  <div class="max-w-[1280px] mx-auto px-6 h-[68px] flex items-center justify-between">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-6 h-[60px] sm:h-[68px] flex items-center justify-between">
     <a href="#top" class="flex items-center">
-      <img src="/assets/logo/offer-logo-header.png" alt="Offer Fabrications" class="h-14 w-auto" />
+      <img src="/assets/logo/offer-logo-header.png" alt="Offer Fabrications" class="h-11 sm:h-14 w-auto" />
     </a>
     <nav class="hidden lg:flex items-center gap-9">
       <a href="/services/" class="nav-link">Services</a>
@@ -235,8 +276,11 @@ const schemaGraph = {
     <div class="flex items-center gap-3">
       <a href={phoneTel} class="hidden sm:inline-flex link-arrow text-sm mr-1">{home.business.phone}</a>
       <a href="#contact" class="hidden sm:inline-flex btn btn-primary !py-2.5 !px-5 text-sm">Get a Quote</a>
-      <button id="menuBtn" aria-label="Open menu" class="lg:hidden w-10 h-10 grid place-items-center">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <a href={phoneTel} aria-label={"Call " + home.business.phone} class="sm:hidden w-11 h-11 grid place-items-center border line rounded-[3px] accent">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.4l1.7 4.3-2.1 1.3a11 11 0 0 0 5 5l1.3-2.1L18.7 16v3.2a2 2 0 0 1-2 2A14.5 14.5 0 0 1 2.8 7a2 2 0 0 1 2.2-3z"/></svg>
+      </a>
+      <button id="menuBtn" aria-label="Open menu" class="lg:hidden w-11 h-11 grid place-items-center border line rounded-[3px] sm:border-0">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
@@ -244,20 +288,20 @@ const schemaGraph = {
 
 <!-- mobile menu -->
 <div id="mobileMenu" class="hidden-menu fixed inset-0 z-50 bg-white lg:hidden flex flex-col">
-  <div class="h-[68px] px-6 flex items-center justify-between border-b line">
-    <img src="/assets/logo/offer-logo-header.png" alt="Offer Fabrications" class="h-11 w-auto" />
+  <div class="h-[60px] sm:h-[68px] px-5 sm:px-6 flex items-center justify-between border-b line">
+    <img src="/assets/logo/offer-logo-header.png" alt="Offer Fabrications" class="h-10 sm:h-11 w-auto" />
     <button id="menuClose" aria-label="Close menu" class="w-10 h-10 grid place-items-center">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
-  <nav class="flex-1 px-6 py-4 flex flex-col">
-    <a href="/services/" class="menu-item font-display text-[1.7rem] font-medium py-4 border-b line flex items-center justify-between">Services <span class="accent text-base">→</span></a>
-    <a href="#work" class="menu-item font-display text-[1.7rem] font-medium py-4 border-b line flex items-center justify-between">Our Work <span class="accent text-base">→</span></a>
-    <a href="#industries" class="menu-item font-display text-[1.7rem] font-medium py-4 border-b line flex items-center justify-between">Industries <span class="accent text-base">→</span></a>
-    <a href="/locations/" class="menu-item font-display text-[1.7rem] font-medium py-4 border-b line flex items-center justify-between">Areas We Serve <span class="accent text-base">→</span></a>
-    <a href="#contact" class="menu-item font-display text-[1.7rem] font-medium py-4 border-b line flex items-center justify-between">Contact <span class="accent text-base">→</span></a>
+  <nav class="flex-1 px-5 sm:px-6 py-3 sm:py-4 flex flex-col">
+    <a href="/services/" class="menu-item font-display text-[1.5rem] sm:text-[1.7rem] font-medium py-3.5 sm:py-4 border-b line flex items-center justify-between">Services <span class="accent text-base">→</span></a>
+    <a href="#work" class="menu-item font-display text-[1.5rem] sm:text-[1.7rem] font-medium py-3.5 sm:py-4 border-b line flex items-center justify-between">Our Work <span class="accent text-base">→</span></a>
+    <a href="#industries" class="menu-item font-display text-[1.5rem] sm:text-[1.7rem] font-medium py-3.5 sm:py-4 border-b line flex items-center justify-between">Industries <span class="accent text-base">→</span></a>
+    <a href="/locations/" class="menu-item font-display text-[1.5rem] sm:text-[1.7rem] font-medium py-3.5 sm:py-4 border-b line flex items-center justify-between">Areas We Serve <span class="accent text-base">→</span></a>
+    <a href="#contact" class="menu-item font-display text-[1.5rem] sm:text-[1.7rem] font-medium py-3.5 sm:py-4 border-b line flex items-center justify-between">Contact <span class="accent text-base">→</span></a>
   </nav>
-  <div class="px-6 py-6 border-t line space-y-3">
+  <div class="px-5 sm:px-6 py-5 sm:py-6 border-t line space-y-2.5">
     <a href={phoneTel} class="btn btn-primary w-full">Call {home.business.phone}</a>
     <a href="#contact" class="menu-item btn btn-ghost w-full">Request a Quote</a>
   </div>
@@ -265,29 +309,29 @@ const schemaGraph = {
 
 <!-- HERO -->
 <section id="top" class="relative">
-  <div class="relative min-h-[86vh] lg:min-h-[88vh] flex items-end">
+  <div class="relative min-h-[88svh] sm:min-h-[86vh] lg:min-h-[88vh] flex items-end">
     <img src={home.hero.image} alt="Offer Fabrications branded HiLux beside a custom-built generator enclosure" class="absolute inset-0 imgcover hero-img" />
-    <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(15,16,20,.45) 0%, rgba(15,16,20,.15) 38%, rgba(15,16,20,.55) 78%, rgba(15,16,20,.86) 100%)"></div>
-    <div class="relative z-10 w-full max-w-[1280px] mx-auto px-6 pb-16 lg:pb-24 text-white">
+    <div class="absolute inset-0 hero-scrim"></div>
+    <div class="relative z-10 w-full max-w-[1280px] mx-auto px-5 sm:px-6 pb-11 sm:pb-16 lg:pb-24 text-white">
       <div class="max-w-3xl">
-        <div class="kicker on-dark mb-6">{home.hero.kicker}</div>
+        <div class="kicker on-dark mb-4 sm:mb-6">{home.hero.kicker}</div>
         <h1 class="h-hero font-display">{home.hero.titleLine1}<br/>{home.hero.titleLine2}<br/>{home.hero.titleLine3}</h1>
-        <p class="lead !text-white/80 mt-6 max-w-xl">{home.hero.sub}</p>
-        <div class="mt-9 flex flex-wrap gap-3">
-          <a href="#contact" class="btn btn-light">{home.hero.ctaPrimary}</a>
-          <a href="#work" class="btn btn-outline-light">{home.hero.ctaSecondary}</a>
+        <p class="lead !text-white/80 mt-4 sm:mt-6 max-w-xl">{home.hero.sub}</p>
+        <div class="mt-6 sm:mt-9 grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap sm:gap-3">
+          <a href="#contact" class="btn btn-light w-full sm:w-auto">{home.hero.ctaPrimary}</a>
+          <a href="#work" class="btn btn-outline-light w-full sm:w-auto">{home.hero.ctaSecondary}</a>
         </div>
-        <a href="/aboriginal-owned-fabrication/" class="mt-7 inline-flex items-center gap-2.5 text-[12.5px] font-semibold tracking-wide uppercase text-white/90 border border-white/25 rounded-full pl-3 pr-4 py-2 hover:border-white/60 transition">
+        <a href="/aboriginal-owned-fabrication/" class="mt-5 sm:mt-7 inline-flex items-center gap-2.5 text-[11px] sm:text-[12.5px] font-semibold tracking-wide uppercase text-white/90 border border-white/25 rounded-full pl-3 pr-4 py-2.5 hover:border-white/60 transition">
           <span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent)"></span>
           Proudly Aboriginal-owned · Supply Nation Certified
         </a>
       </div>
     </div>
   </div>
-  <div class="bg-ink text-white py-6 overflow-hidden">
-    <p class="text-center text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">Steel · Stainless · Aluminium — fabricated in-house in Bibra Lake</p>
+  <div class="bg-ink text-white py-5 sm:py-6 overflow-hidden">
+    <p class="text-center text-[9.5px] sm:text-[10px] tracking-[0.24em] sm:tracking-[0.3em] uppercase text-white/40 mb-3 sm:mb-4 px-5">Steel · Stainless · Aluminium — fabricated in-house in Bibra Lake</p>
     <div class="marquee">
-      <div class="marquee-track font-display font-semibold text-lg sm:text-xl uppercase tracking-wide text-white/75">
+      <div class="marquee-track font-display font-semibold text-base sm:text-xl uppercase tracking-wide text-white/75">
         {[...marqueeWords, ...marqueeWords].map((w) => (
           <span>{w}<span class="diamond">◆</span></span>
         ))}
@@ -297,7 +341,7 @@ const schemaGraph = {
 </section>
 
 <!-- INTRO -->
-<section class="max-w-[1280px] mx-auto px-6 py-20 lg:py-28">
+<section class="max-w-[1280px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-28">
   <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
     <div class="lg:col-span-7 reveal">
       <div class="kicker mb-5">{home.intro.kicker}</div>
@@ -305,14 +349,14 @@ const schemaGraph = {
     </div>
     <div class="lg:col-span-5 reveal">
       <p class="lead">{home.intro.body}</p>
-      <a href="#about" class="link-arrow mt-6">More about us <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#about" class="link-arrow mt-5 sm:mt-6 py-2.5">More about us <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- CAPABILITIES -->
 <section id="services" class="bg-paper-2 border-y line">
-  <div class="max-w-[1280px] mx-auto px-6 py-20 lg:py-28">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-28">
     <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-5 mb-14">
       <div>
         <div class="kicker mb-4">{home.capabilities.kicker}</div>
@@ -320,13 +364,15 @@ const schemaGraph = {
       </div>
       <p class="lead md:max-w-sm md:text-right">{home.capabilities.sub}</p>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
       {home.capabilities.items.map((c, i) => (
-        <a href={serviceMap[c.title] || "/services/"} class="card p-8 reveal block group">
-          <svg class="ico mb-6" viewBox="0 0 24 24" set:html={capIcons[i % capIcons.length]}></svg>
-          <h3 class="font-display font-bold text-xl mb-2 group-hover:accent transition">{c.title}</h3>
-          <p class="muted text-[.95rem] leading-relaxed">{c.body}</p>
-          <span class="accent font-display font-semibold text-sm mt-4 inline-block">Learn more →</span>
+        <a href={serviceMap[c.title] || "/services/"} class="card p-5 sm:p-8 reveal group flex items-start gap-4 sm:block">
+          <svg class="ico shrink-0 mt-0.5 sm:mt-0 sm:mb-6" viewBox="0 0 24 24" set:html={capIcons[i % capIcons.length]}></svg>
+          <span class="block min-w-0 flex-1">
+            <h3 class="font-display font-bold text-[1.08rem] sm:text-xl mb-1 sm:mb-2 group-hover:accent transition">{c.title}</h3>
+            <p class="muted text-[.9rem] sm:text-[.95rem] leading-relaxed">{c.body}</p>
+            <span class="accent font-display font-semibold text-sm mt-2.5 sm:mt-4 inline-block">Learn more →</span>
+          </span>
         </a>
       ))}
     </div>
@@ -334,10 +380,10 @@ const schemaGraph = {
 </section>
 
 <!-- FEATURE 1 -->
-<section id="about" class="max-w-[1280px] mx-auto px-6 py-20 lg:py-28">
+<section id="about" class="max-w-[1280px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-28">
   <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
     <div class="reveal ring-frame zoom rounded-[3px]">
-      <img src={home.feature1.image} alt="Custom steel valve enclosure with pipework, fabricated by Offer Fabrications in Bibra Lake WA" loading="lazy" decoding="async" class="w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] object-cover rounded-[3px]" />
+      <img src={home.feature1.image} alt="Custom steel valve enclosure with pipework, fabricated by Offer Fabrications in Bibra Lake WA" loading="lazy" decoding="async" class="w-full aspect-[4/3] sm:aspect-[4/3] lg:aspect-[4/5] object-cover rounded-[3px]" />
     </div>
     <div class="reveal">
       <div class="kicker mb-5">{home.feature1.kicker}</div>
@@ -354,7 +400,7 @@ const schemaGraph = {
 
 <!-- ABORIGINAL-OWNED -->
 <section id="aboriginal-owned" class="bg-ink text-white">
-  <div class="max-w-[1280px] mx-auto px-6 py-20 lg:py-24">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-24">
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <div class="reveal">
         <div class="kicker on-dark mb-5">Aboriginal-owned · Supply Nation Certified</div>
@@ -362,11 +408,11 @@ const schemaGraph = {
         <p class="lead !text-white/75 mb-6">Offer Fabrications is an Aboriginal-owned metal fabrication business and a certified Supply Nation supplier. For mining, resources, oil and gas, government and construction clients, that means your fabrication spend is verified engagement with a certified Indigenous business — with no compromise on capability, quality or turnaround.</p>
         <a href="/aboriginal-owned-fabrication/" class="link-arrow !text-white">Aboriginal-owned &amp; Indigenous procurement <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="reveal grid sm:grid-cols-2 gap-4">
-        <div class="border border-white/12 rounded-[4px] p-6"><div class="font-display font-bold text-lg mb-1.5 accent">Aboriginal-owned</div><p class="text-white/60 text-[.92rem] leading-relaxed">A genuinely Aboriginal-owned and operated Perth fabrication business.</p></div>
-        <div class="border border-white/12 rounded-[4px] p-6"><div class="font-display font-bold text-lg mb-1.5 accent">Supply Nation certified</div><p class="text-white/60 text-[.92rem] leading-relaxed">A verified, certified supplier in the Supply Nation Indigenous business directory.</p></div>
-        <div class="border border-white/12 rounded-[4px] p-6"><div class="font-display font-bold text-lg mb-1.5 accent">Counts toward your targets</div><p class="text-white/60 text-[.92rem] leading-relaxed">Real spend against Indigenous procurement policies and Reconciliation Action Plans.</p></div>
-        <div class="border border-white/12 rounded-[4px] p-6"><div class="font-display font-bold text-lg mb-1.5 accent">No compromise</div><p class="text-white/60 text-[.92rem] leading-relaxed">Backed by genuine steel, stainless and aluminium fabrication capability.</p></div>
+      <div class="reveal grid grid-cols-2 gap-2.5 sm:gap-4">
+        <div class="border border-white/12 rounded-[4px] p-4 sm:p-6"><div class="font-display font-bold text-[.95rem] sm:text-lg mb-1.5 accent leading-snug">Aboriginal-owned</div><p class="text-white/60 text-[.8rem] sm:text-[.92rem] leading-relaxed">A genuinely Aboriginal-owned and operated Perth fabrication business.</p></div>
+        <div class="border border-white/12 rounded-[4px] p-4 sm:p-6"><div class="font-display font-bold text-[.95rem] sm:text-lg mb-1.5 accent leading-snug">Supply Nation certified</div><p class="text-white/60 text-[.8rem] sm:text-[.92rem] leading-relaxed">A verified, certified supplier in the Supply Nation Indigenous business directory.</p></div>
+        <div class="border border-white/12 rounded-[4px] p-4 sm:p-6"><div class="font-display font-bold text-[.95rem] sm:text-lg mb-1.5 accent leading-snug">Counts toward your targets</div><p class="text-white/60 text-[.8rem] sm:text-[.92rem] leading-relaxed">Real spend against Indigenous procurement policies and Reconciliation Action Plans.</p></div>
+        <div class="border border-white/12 rounded-[4px] p-4 sm:p-6"><div class="font-display font-bold text-[.95rem] sm:text-lg mb-1.5 accent leading-snug">No compromise</div><p class="text-white/60 text-[.8rem] sm:text-[.92rem] leading-relaxed">Backed by genuine steel, stainless and aluminium fabrication capability.</p></div>
       </div>
     </div>
   </div>
@@ -374,7 +420,7 @@ const schemaGraph = {
 
 <!-- WORK -->
 <section id="work" class="bg-paper-2 border-y line">
-  <div class="max-w-[1280px] mx-auto px-6 py-20 lg:py-28">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-28">
     <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-5 mb-12">
       <div>
         <div class="kicker mb-4">{home.work.kicker}</div>
@@ -382,7 +428,8 @@ const schemaGraph = {
       </div>
       <p class="lead md:max-w-sm md:text-right">{home.work.sub}</p>
     </div>
-    <div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
+    <p class="sm:hidden text-[11px] uppercase tracking-widest muted mb-3 flex items-center gap-2">Swipe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+    <div class="rail sm:grid sm:grid-cols-2 sm:gap-5">
       {home.work.items.map((w) => (
         <figure class="zoom relative rounded-[3px] overflow-hidden reveal">
           <img src={w.image} alt={w.alt || w.caption || "Fabrication by Offer Fabrications"} loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover" />
@@ -399,37 +446,37 @@ const schemaGraph = {
 </section>
 
 <!-- STATS -->
-<section class="max-w-[1280px] mx-auto px-6 py-16 lg:py-20">
-  <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-10 divide-y-0 lg:divide-x line reveal">
+<section class="max-w-[1280px] mx-auto px-5 sm:px-6 py-12 sm:py-16 lg:py-20">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-5 sm:gap-x-8 gap-y-8 sm:gap-y-10 divide-y-0 lg:divide-x line reveal">
     {home.stats.map((s) => (
-      <div class="lg:px-8 first:pl-0"><div class="font-display font-bold text-5xl lg:text-6xl" set:html={s.value.replace('%', '<span class=\'accent\'>%</span>')}></div><div class="muted text-sm mt-2">{s.label}</div></div>
+      <div class="min-w-0 lg:px-8 lg:first:pl-0"><div class="font-display font-bold text-[2.6rem] leading-none sm:text-5xl lg:text-6xl break-words" set:html={s.value.replace('%', '<span class=\'accent\'>%</span>')}></div><div class="muted text-[.82rem] sm:text-sm mt-2 leading-snug">{s.label}</div></div>
     ))}
   </div>
 </section>
 
 <!-- INDUSTRIES -->
-<section id="industries" class="max-w-[1280px] mx-auto px-6 py-20 lg:py-28">
+<section id="industries" class="max-w-[1280px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-28">
   <div class="reveal mb-12">
     <div class="kicker mb-4">{home.industries.kicker}</div>
     <h2 class="h-sec font-display">{home.industries.heading}</h2>
   </div>
-  <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4 reveal">
     {home.industries.items.map((ind, i) => (
-      <div class="card p-7 flex items-center gap-4"><span class="accent"><svg class="ico-sm" viewBox="0 0 24 24" style="stroke:var(--accent)" set:html={indIcons[i % indIcons.length]}></svg></span><span class="font-display font-semibold text-[1.05rem]">{ind.name}</span></div>
+      <div class="card p-4 sm:p-7 flex items-center gap-3 sm:gap-4"><span class="accent shrink-0"><svg class="ico-sm" viewBox="0 0 24 24" style="stroke:var(--accent)" set:html={indIcons[i % indIcons.length]}></svg></span><span class="font-display font-semibold text-[.92rem] sm:text-[1.05rem] leading-snug">{ind.name}</span></div>
     ))}
   </div>
 </section>
 
 <!-- PROCESS -->
 <section class="bg-paper-2 border-y line">
-  <div class="max-w-[1280px] mx-auto px-6 py-20 lg:py-28">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-28">
     <div class="reveal mb-14">
       <div class="kicker mb-4">{home.process.kicker}</div>
       <h2 class="h-sec font-display">{home.process.heading}</h2>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-5 sm:gap-x-8 gap-y-8 sm:gap-y-10">
       {home.process.steps.map((st, i) => (
-        <div class="reveal"><div class="font-display font-bold text-5xl accent">{String(i + 1).padStart(2, '0')}</div><div class="h-px w-full my-5" style="background:var(--line)"></div><h3 class="font-display font-bold text-xl mb-2">{st.title}</h3><p class="muted text-[.95rem]">{st.body}</p></div>
+        <div class="reveal"><div class="font-display font-bold text-3xl sm:text-5xl accent leading-none">{String(i + 1).padStart(2, '0')}</div><div class="h-px w-full my-3.5 sm:my-5" style="background:var(--line)"></div><h3 class="font-display font-bold text-[1.05rem] sm:text-xl mb-1.5 sm:mb-2">{st.title}</h3><p class="muted text-[.88rem] sm:text-[.95rem] leading-relaxed">{st.body}</p></div>
       ))}
     </div>
   </div>
@@ -437,19 +484,19 @@ const schemaGraph = {
 
 <!-- FAQ -->
 <section id="faq" class="bg-paper-2 border-y line">
-  <div class="max-w-[900px] mx-auto px-6 py-20 lg:py-28">
+  <div class="max-w-[900px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-28">
     <div class="reveal mb-10">
       <div class="kicker mb-4">{home.faq.kicker}</div>
       <h2 class="h-sec font-display">{home.faq.heading}</h2>
     </div>
     <div class="reveal border-t border-b line">
       {home.faq.items.map((f) => (
-        <details class="group border-b line last:border-b-0 py-5">
-          <summary class="flex items-center justify-between gap-6 cursor-pointer list-none font-display font-semibold text-[1.08rem] leading-snug">
+        <details class="group border-b line last:border-b-0">
+          <summary class="flex items-center justify-between gap-5 cursor-pointer list-none font-display font-semibold text-[1rem] sm:text-[1.08rem] leading-snug py-4 min-h-[56px]">
             <span>{f.q}</span>
             <span class="accent shrink-0 transition-transform duration-200 group-open:rotate-45 text-2xl leading-none">+</span>
           </summary>
-          <p class="muted mt-3 leading-relaxed text-[.98rem] max-w-2xl">{f.a}</p>
+          <p class="muted -mt-1 pb-4 leading-relaxed text-[.94rem] sm:text-[.98rem] max-w-2xl">{f.a}</p>
         </details>
       ))}
     </div>
@@ -457,37 +504,40 @@ const schemaGraph = {
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="max-w-[1280px] mx-auto px-6 py-20 lg:py-28">
-  <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
-    <div class="reveal">
+<section id="contact" class="max-w-[1280px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-28">
+  <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-x-16 lg:gap-y-10">
+    <div class="reveal order-1">
       <div class="kicker mb-4">{home.contact.kicker}</div>
-      <h2 class="h-sec font-display mb-6">{home.contact.heading}</h2>
-      <p class="lead mb-10 max-w-md">{home.contact.sub}</p>
+      <h2 class="h-sec font-display mb-4 sm:mb-6">{home.contact.heading}</h2>
+      <p class="lead max-w-md">{home.contact.sub}</p>
+    </div>
+    <div class="reveal order-3 lg:order-2">
       <div class="space-y-2">
-        <a href={phoneTel} class="flex items-center gap-4 py-4 border-t line group">
+        <a href={phoneTel} class="flex items-center gap-4 py-3.5 sm:py-4 border-t line group">
           <span class="w-11 h-11 bg-paper-2 border line rounded-[3px] grid place-items-center accent shrink-0"><svg class="ico-sm" viewBox="0 0 24 24" style="stroke:var(--accent)"><path d="M5 4h3.4l1.7 4.3-2.1 1.3a11 11 0 0 0 5 5l1.3-2.1L18.7 16v3.2a2 2 0 0 1-2 2A14.5 14.5 0 0 1 2.8 7a2 2 0 0 1 2.2-3z"/></svg></span>
           <span><span class="block text-[11px] muted uppercase tracking-widest">Call</span><span class="text-lg font-display font-semibold group-hover:accent transition">{home.business.phone}</span></span>
         </a>
-        <a href={mailTo} class="flex items-center gap-4 py-4 border-t line group">
+        <a href={mailTo} class="flex items-center gap-4 py-3.5 sm:py-4 border-t line group">
           <span class="w-11 h-11 bg-paper-2 border line rounded-[3px] grid place-items-center accent shrink-0"><svg class="ico-sm" viewBox="0 0 24 24" style="stroke:var(--accent)"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg></span>
           <span><span class="block text-[11px] muted uppercase tracking-widest">Email</span><span class="text-lg font-display font-semibold group-hover:accent transition break-all">{home.business.email}</span></span>
         </a>
-        <div class="flex items-center gap-4 py-4 border-t line">
+        <div class="flex items-center gap-4 py-3.5 sm:py-4 border-t line">
           <span class="w-11 h-11 bg-paper-2 border line rounded-[3px] grid place-items-center accent shrink-0"><svg class="ico-sm" viewBox="0 0 24 24" style="stroke:var(--accent)"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
           <span><span class="block text-[11px] muted uppercase tracking-widest">Workshop</span><span class="text-lg font-display font-semibold">{home.business.address}</span></span>
         </div>
-        <a href={home.business.instagramUrl} target="_blank" rel="noopener" class="flex items-center gap-4 py-4 border-t border-b line group">
+        <a href={home.business.instagramUrl} target="_blank" rel="noopener" class="flex items-center gap-4 py-3.5 sm:py-4 border-t border-b line group">
           <span class="w-11 h-11 bg-paper-2 border line rounded-[3px] grid place-items-center accent shrink-0"><svg class="ico-sm" viewBox="0 0 24 24" style="stroke:var(--accent)"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="6.8" r="1"/></svg></span>
           <span><span class="block text-[11px] muted uppercase tracking-widest">Instagram</span><span class="text-lg font-display font-semibold group-hover:accent transition">{home.business.instagram}</span></span>
         </a>
       </div>
-      <div class="mt-8 rounded-[3px] overflow-hidden border line">
-        <iframe title="Offer Fabrications location" width="100%" height="230" style="border:0;filter:grayscale(.4) contrast(.95)" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      <div class="mt-6 sm:mt-8 rounded-[3px] overflow-hidden border line">
+        <iframe title="Offer Fabrications location" width="100%" class="block w-full h-[190px] sm:h-[230px]" style="border:0;filter:grayscale(.4) contrast(.95)" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps?q=Salpietro+Street+Bibra+Lake+WA+6163&output=embed"></iframe>
       </div>
     </div>
-    <div class="reveal">
-      <div class="bg-paper-2 border line rounded-[3px] p-7 sm:p-9">
+    <!-- on a phone the form sits straight under the heading — it is the action -->
+    <div class="reveal order-2 lg:order-3 lg:col-start-2 lg:row-start-1 lg:row-span-2">
+      <div class="bg-paper-2 border line rounded-[3px] p-5 sm:p-9">
         <form name="quote" method="POST" action="/success/" data-netlify="true" netlify-honeypot="bot-field" class="space-y-5">
           <input type="hidden" name="form-name" value="quote" />
           <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
@@ -531,27 +581,27 @@ const schemaGraph = {
 <section class="relative">
   <img src={home.ctaBanner.image} alt="Fabrication in progress" class="absolute inset-0 imgcover" />
   <div class="absolute inset-0" style="background:rgba(15,16,20,.78)"></div>
-  <div class="relative z-10 max-w-[1280px] mx-auto px-6 py-20 lg:py-24 flex flex-col md:flex-row items-center justify-between gap-8 text-white text-center md:text-left">
+  <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-6 py-14 sm:py-20 lg:py-24 flex flex-col md:flex-row items-center justify-between gap-8 text-white text-center md:text-left">
     <h2 class="h-feat font-display max-w-2xl">{home.ctaBanner.heading}</h2>
-    <div class="flex flex-wrap gap-3 justify-center">
-      <a href="#contact" class="btn btn-light">{home.ctaBanner.ctaPrimary}</a>
-      <a href={phoneTel} class="btn btn-outline-light">{home.ctaBanner.ctaSecondary}</a>
+    <div class="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:flex-wrap sm:gap-3 justify-center">
+      <a href="#contact" class="btn btn-light w-full sm:w-auto">{home.ctaBanner.ctaPrimary}</a>
+      <a href={phoneTel} class="btn btn-outline-light w-full sm:w-auto">{home.ctaBanner.ctaSecondary}</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="bg-ink text-white">
-  <div class="max-w-[1280px] mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
-    <div>
-      <div class="mb-5">
-        <img src="/assets/logo/offer-logo-full.png" alt="Offer Fabrications" class="h-20 w-auto" />
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-6 py-12 sm:py-16 grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
+    <div class="col-span-2 md:col-span-1">
+      <div class="mb-4 sm:mb-5">
+        <img src="/assets/logo/offer-logo-full.png" alt="Offer Fabrications" class="h-16 sm:h-20 w-auto" />
       </div>
       <p class="text-white/55 text-sm max-w-xs leading-relaxed">{home.footer.blurb}</p>
     </div>
     <div>
       <h4 class="text-[11px] uppercase tracking-widest text-white/40 mb-4 font-semibold">Explore</h4>
-      <ul class="space-y-2.5 text-white/70 text-sm">
+      <ul class="space-y-0.5 sm:space-y-1 text-white/70 text-[.85rem] sm:text-sm [overflow-wrap:anywhere] [&_a]:inline-block [&_a]:py-2.5 [&_li]:py-0">
         <li><a href="/services/" class="hover:text-white transition">Services</a></li>
         <li><a href="#work" class="hover:text-white transition">Our Work</a></li>
         <li><a href="#industries" class="hover:text-white transition">Industries</a></li>
@@ -564,7 +614,7 @@ const schemaGraph = {
     </div>
     <div>
       <h4 class="text-[11px] uppercase tracking-widest text-white/40 mb-4 font-semibold">Contact</h4>
-      <ul class="space-y-2.5 text-white/70 text-sm">
+      <ul class="space-y-0.5 sm:space-y-1 text-white/70 text-[.85rem] sm:text-sm [overflow-wrap:anywhere] [&_a]:inline-block [&_a]:py-2.5 [&_li]:py-0">
         <li><a href={phoneTel} class="hover:text-white transition">{home.business.phone}</a></li>
         <li><a href={mailTo} class="hover:text-white transition">{home.business.email}</a></li>
         <li>{home.business.address}</li>
@@ -573,7 +623,7 @@ const schemaGraph = {
     </div>
   </div>
   <div class="border-t border-white/10">
-    <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/45">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/45">
       <span>© <span id="yr"></span> Offer Fabrications. All rights reserved.</span>
       <span>Website by <a href="https://intrlude.com.au" target="_blank" rel="noopener" class="text-white/70 hover:text-[var(--accent)] transition">Intrlude</a></span>
     </div>
@@ -581,9 +631,9 @@ const schemaGraph = {
 </footer>
 
 <!-- STICKY MOBILE BAR -->
-<div id="mobileBar" class="fixed bottom-0 inset-x-0 z-30 bg-white border-t line grid grid-cols-2 gap-2 p-2.5 lg:hidden">
-  <a href={phoneTel} class="btn btn-ghost !py-3 text-sm">Call</a>
-  <a href="#contact" class="btn btn-primary !py-3 text-sm">Get a Quote</a>
+<div id="mobileBar" class="fixed bottom-0 inset-x-0 z-30 border-t line grid grid-cols-2 gap-2 px-2.5 pt-2.5 lg:hidden">
+  <a href={phoneTel} class="btn btn-ghost !py-3.5 text-sm gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.4l1.7 4.3-2.1 1.3a11 11 0 0 0 5 5l1.3-2.1L18.7 16v3.2a2 2 0 0 1-2 2A14.5 14.5 0 0 1 2.8 7a2 2 0 0 1 2.2-3z"/></svg>Call</a>
+  <a href="#contact" class="btn btn-primary !py-3.5 text-sm">Get a Quote</a>
 </div>
 
 <script is:inline>
@@ -594,6 +644,13 @@ const schemaGraph = {
   document.getElementById('menuBtn').addEventListener('click', openM);
   document.getElementById('menuClose').addEventListener('click', closeM);
   menu.querySelectorAll('.menu-item').forEach(a => a.addEventListener('click', closeM));
+  // sticky action bar stays out of the way while the hero CTAs are on screen
+  const bar = document.getElementById('mobileBar');
+  const hero = document.getElementById('top');
+  const barIO = new IntersectionObserver(([e]) => {
+    bar.classList.toggle('show', !e.isIntersecting);
+  }, { threshold: 0, rootMargin: '-70% 0px 0px 0px' });
+  barIO.observe(hero);
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
