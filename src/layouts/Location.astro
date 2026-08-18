@@ -5,7 +5,7 @@ const home = homeData;
 const phoneTel = "tel:" + home.business.phoneHref;
 const mailTo = "mailto:" + home.business.email;
 
-const { title, description, canonical, schema, ogImage } = Astro.props;
+const { title, description, canonical, schema, ogImage, quoteHref = "/#contact" } = Astro.props;
 const img = ogImage || "https://offerfabrications.com.au/assets/img/hero-ute-generator.jpg";
 ---
 <!DOCTYPE html>
@@ -127,7 +127,7 @@ const img = ogImage || "https://offerfabrications.com.au/assets/img/hero-ute-gen
     </nav>
     <div class="flex items-center gap-3">
       <a href={phoneTel} class="hidden sm:inline-flex link-arrow text-sm mr-1">{home.business.phone}</a>
-      <a href="/#contact" class="hidden sm:inline-flex btn btn-primary !py-2.5 !px-5 text-sm">Get a Quote</a>
+      <a href={quoteHref} class="hidden sm:inline-flex btn btn-primary !py-2.5 !px-5 text-sm">Get a Quote</a>
       <button id="menuBtn" aria-label="Open menu" class="lg:hidden w-10 h-10 grid place-items-center">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -152,7 +152,7 @@ const img = ogImage || "https://offerfabrications.com.au/assets/img/hero-ute-gen
   </nav>
   <div class="px-6 py-6 border-t line space-y-3">
     <a href={phoneTel} class="btn btn-primary w-full">Call {home.business.phone}</a>
-    <a href="/#contact" class="menu-item btn btn-ghost w-full">Request a Quote</a>
+    <a href={quoteHref} class="menu-item btn btn-ghost w-full">Request a Quote</a>
   </div>
 </div>
 
@@ -200,7 +200,7 @@ const img = ogImage || "https://offerfabrications.com.au/assets/img/hero-ute-gen
 <!-- STICKY MOBILE BAR -->
 <div id="mobileBar" class="fixed bottom-0 inset-x-0 z-30 bg-white border-t line grid grid-cols-2 gap-2 p-2.5 lg:hidden">
   <a href={phoneTel} class="btn btn-ghost !py-3 text-sm">Call</a>
-  <a href="/#contact" class="btn btn-primary !py-3 text-sm">Get a Quote</a>
+  <a href={quoteHref} class="btn btn-primary !py-3 text-sm">Get a Quote</a>
 </div>
 
 <script is:inline>

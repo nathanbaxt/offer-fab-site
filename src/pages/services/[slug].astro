@@ -1,5 +1,6 @@
 ---
 import Location from "../../layouts/Location.astro";
+import QuoteForm from "../../components/QuoteForm.astro";
 import services from "../../../content/services.json";
 import homeData from "../../../content/home.json";
 const home = homeData;
@@ -63,7 +64,7 @@ const schema = {
   ]
 };
 ---
-<Location title={svc.metaTitle} description={svc.metaDescription} canonical={canonical} schema={schema}>
+<Location title={svc.metaTitle} description={svc.metaDescription} canonical={canonical} schema={schema} quoteHref="#quote">
   <!-- HERO -->
   <section class="bg-ink text-white">
     <div class="max-w-[1000px] mx-auto px-6 pt-16 pb-14 lg:pt-24 lg:pb-20">
@@ -76,7 +77,7 @@ const schema = {
       <h1 class="h-hero font-display">{svc.h1}</h1>
       <p class="lead !text-white/80 mt-6 max-w-2xl">{svc.intro}</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="/#contact" class="btn btn-light">Request a Quote</a>
+        <a href="#quote" class="btn btn-light">Request a Quote</a>
         <a href={phoneTel} class="btn btn-outline-light">Call {home.business.phone}</a>
       </div>
     </div>
@@ -122,6 +123,9 @@ const schema = {
     </div>
   </section>
 
+  <!-- QUOTE FORM -->
+  <QuoteForm service={svc.name} page={`/services/${svc.slug}/`} />
+
   <!-- FAQ -->
   {svc.faqs && svc.faqs.length > 0 && (
     <section class="max-w-[1000px] mx-auto px-6 py-16 lg:py-20">
@@ -159,7 +163,7 @@ const schema = {
         <p class="text-white/70 max-w-xl">Send a drawing, sketch or photo and we'll come back with a clear quote — usually within a day or two.</p>
       </div>
       <div class="flex flex-wrap gap-3 shrink-0">
-        <a href="/#contact" class="btn btn-light">Request a Quote</a>
+        <a href="#quote" class="btn btn-light">Request a Quote</a>
         <a href={phoneTel} class="btn btn-outline-light">Call Now</a>
       </div>
     </div>

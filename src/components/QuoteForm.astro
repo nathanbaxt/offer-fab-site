@@ -1,0 +1,55 @@
+---
+// On-page quote form for service pages. Submits to the same Netlify "quote"
+// form as the homepage; `service` and `page` arrive as hidden fields so
+// Tyrone can see which page the enquiry came from.
+import homeData from "../../content/home.json";
+const home = homeData;
+const phoneTel = "tel:" + home.business.phoneHref;
+const { service, page } = Astro.props;
+---
+<section id="quote" class="bg-paper-2 border-y line scroll-mt-24">
+  <div class="max-w-[1000px] mx-auto px-5 sm:px-6 py-14 sm:py-16 lg:py-20">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <div class="lg:col-span-5">
+        <div class="kicker mb-5">Get a price</div>
+        <h2 class="h-feat font-display mb-4">Tell us what you need — we'll quote it.</h2>
+        <p class="lead">The quickest way to a price. Type out the job, hit send, and we'll come back to you — usually within a day or two. Drawings, sketches or photos can be sent by reply.</p>
+        <ul class="mt-6 space-y-2.5 text-[.95rem]">
+          <li class="flex gap-3"><span class="accent shrink-0">▸</span><span>No obligation — a clear price, not a sales pitch</span></li>
+          <li class="flex gap-3"><span class="accent shrink-0">▸</span><span>Goes straight to the workshop, answered by the fabricator</span></li>
+          <li class="flex gap-3"><span class="accent shrink-0">▸</span><span>One-offs and production runs both welcome</span></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-7">
+        <div class="card p-6 sm:p-8 !transform-none hover:!shadow-none">
+          <form name="quote" method="POST" action="/success/" data-netlify="true" netlify-honeypot="bot-field" class="space-y-5">
+            <input type="hidden" name="form-name" value="quote" />
+            <input type="hidden" name="service" value={service} />
+            <input type="hidden" name="page" value={page} />
+            <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-[11px] muted uppercase tracking-widest mb-2">Name</label>
+                <input name="name" required class="w-full bg-white border line rounded-[3px] px-4 py-3 text-[1rem] focus:outline-none focus:border-[var(--accent)]" />
+              </div>
+              <div>
+                <label class="block text-[11px] muted uppercase tracking-widest mb-2">Phone <span class="normal-case tracking-normal">(optional)</span></label>
+                <input name="phone" type="tel" class="w-full bg-white border line rounded-[3px] px-4 py-3 text-[1rem] focus:outline-none focus:border-[var(--accent)]" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-[11px] muted uppercase tracking-widest mb-2">Email</label>
+              <input name="email" type="email" required class="w-full bg-white border line rounded-[3px] px-4 py-3 text-[1rem] focus:outline-none focus:border-[var(--accent)]" />
+            </div>
+            <div>
+              <label class="block text-[11px] muted uppercase tracking-widest mb-2">What do you need built?</label>
+              <textarea name="message" rows="5" required placeholder="Sizes, materials, quantities, deadline — whatever you know so far…" class="w-full bg-white border line rounded-[3px] px-4 py-3 text-[1rem] focus:outline-none focus:border-[var(--accent)]"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-full !py-4 text-base">Request My Quote</button>
+            <p class="text-xs muted text-center">Prefer to talk? Call <a href={phoneTel} class="accent font-semibold">{home.business.phone}</a> — Mon–Fri, 7:30am–4pm.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
